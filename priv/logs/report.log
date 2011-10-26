@@ -1,0 +1,16 @@
+
+=ERROR REPORT==== 26-Oct-2011::13:41:29 ===
+Error in process <0.34.0> with exit value: {{badmatch,ok},[{test_echo,run,0}]}
+
+
+=ERROR REPORT==== 26-Oct-2011::13:45:27 ===
+Error in process <0.57.0> with exit value: {{badmatch,{error,{already_started,yaws}}},[{yaws,start_embedded,4},{test_echo,run,0}]}
+
+
+=ERROR REPORT==== 26-Oct-2011::13:45:27 ===
+Error in process <0.59.0> with exit value: {{badmatch,{error,{already_started,yaws}}},[{yaws,start_embedded,4},{test_echo,run,0}]}
+
+
+=ERROR REPORT==== 26-Oct-2011::13:46:44 ===
+Error in process <0.61.0> with exit value: {{badmatch,{error,{already_started,yaws}}},[{yaws,start_embedded,4},{test_echo,run,0}]}
+

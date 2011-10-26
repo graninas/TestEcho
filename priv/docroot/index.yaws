@@ -1,0 +1,16 @@
+<erl>
+	out(A) -> {ssi, "HEAD.inc","[]",[]}.
+</erl>
+<h1>Very simple "Deals with security" test site</h1></div>
+
+<p>
+<a href="./data_input.yaws">Input data</a>
+</p>
+
+<p>
+<a href="./data_output.yaws">View data</a>
+</p>
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

@@ -1,0 +1,91 @@
+<html><head><title>Test for "Deals with security" - Input data</title></head>
+<body>
+
+<div><h1>Input data:</h1></div>
+
+<erl>
+
+out(A) ->
+	ResHtml = case queryvar(A, "result") of
+				{ok, V} -> show(V);
+				undefined -> show("")
+			end,
+	Data = security_server:data(),
+	ResHtml.
+
+show(ResultText) -> {html, form_template(ResultText)}.
+
+form_template(ResultText) ->
+	"<div>
+	<form action=\"input_data.yaws\" method=\"post\">
+	  <fieldset>
+		<table>
+		<tr>
+			<td>Ценная бумага:</td>
+			<td><input type=\"text\" name=\"security\" value=\"\" /></td>
+		</tr>
+		<tr>
+			<td>Дата (dd/mm/yyyy):</td>
+			<td>
+			<input id=\"value-day-input-date\" value=\"\" type=\"hidden\">
+			<input maxlength=\"2\" size=\"2\" id=\"day-input-date\" type=\"text\">
+				<select id=\"month-input-date\">
+					<option value=\"1\">January</option>
+					<option value=\"2\">Febuary</option>
+					<option value=\"3\">March</option>
+					<option value=\"4\">April</option>
+					<option value=\"5\">May</option>
+					<option value=\"6\">June</option>
+					<option value=\"7\">July</option>
+					<option value=\"8\">August</option>
+					<option value=\"9\">September</option>
+					<option value=\"10\">October</option>
+					<option value=\"11\">November</option>
+					<option value=\"12\">December</option>
+				</select>
+			<input id=\"value-year-input-date\" value=\"\" type=\"hidden\">
+			<input maxlength=\"4\" size=\"4\" id=\"year-input-date\" type=\"text\">
+			</td>
+		</tr>
+		<tr>
+			<td>Время (hh:mm:ss):</td>
+			<td>
+			<input id=\"value-hour-input-time\" value=\"\" type=\"hidden\">
+			<input maxlength=\"2\" size=\"2\" id=\"hour-input-time\" type=\"text\">
+			<input id=\"value-minute-input-time\" value=\"\" type=\"hidden\">
+			<input maxlength=\"2\" size=\"2\" id=\"minute-input-time\" type=\"text\">
+			<input id=\"value-second-input-time\" value=\"\" type=\"hidden\">
+			<input maxlength=\"2\" size=\"2\" id=\"second-input-time\" type=\"text\">
+			<input value=\"\" name=\"date\" id=\"input-date\" type=\"hidden\">
+			</td>
+		</tr>
+		<tr>
+			<td>Цена (ед.):</td>
+			<td><input type=\"text\" name=\"price\" value=\"\" /></td>
+		</tr>
+		<tr>
+			<td>Объем сделки:</td>
+			<td><input type=\"text\" name=\"total_sum\" value=\"\" /></td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td><input type=\"submit\" value=\"Отправить\" /></td>
+		</tr>
+		<tr>
+			<td>Result:</td>
+			<td>" ++ ResultText ++ "</td>
+		</tr>
+		</table>
+	  </fieldset>
+	  
+	</form>
+	</div>".
+</erl>
+
+<div>
+	<a href="./index.html">Back to home</a>
+</div>
+
+
+</body>
+</html>
