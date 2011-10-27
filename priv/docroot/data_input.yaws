@@ -10,80 +10,65 @@ out(A) ->
 				{ok, V} -> show(V);
 				undefined -> show("")
 			end,
-	Data = security_server:data(),
 	ResHtml.
 
-show(ResultText) -> {html, form_template(ResultText)}.
+show(_Result) ->
+	{ehtml, 
+		{form, [{action, "data_process.yaws"}, {method, "post"}],
+			{table, [], [
+				{tr, [], [
+					{td, [], "Security name:"},
+					{td, [], {input, [{name, security}, {type, text}]}}
+				]},
+				{tr, [], [
+					{td, [], "Date (dd/mm/yyyy):"},
+					{td, [], [
+								{input, [{name, transaction_day},  {type, text}, {maxlength, "2"}, {size, "2"}]},
+								{select, [{name, transaction_month}], [
+										{option, [{value, "1"}], "January"},
+										{option, [{value, "2"}], "Febuary"},
+										{option, [{value, "3"}], "March"},
+										{option, [{value, "4"}], "April"},
+										{option, [{value, "5"}], "May"},
+										{option, [{value, "6"}], "June"},
+										{option, [{value, "7"}], "July"},
+										{option, [{value, "8"}], "August"},
+										{option, [{value, "9"}], "September"},
+										{option, [{value, "10"}], "October"},
+										{option, [{value, "11"}], "November"},
+										{option, [{value, "12"}], "December"}
+									]},
+								{input, [{name, transaction_year}, {type, text}, {maxlength, "4"}, {size, "4"}]}
+							 ]}
+				]},
+				{tr, [], [
+					{td, [], "Time (hh:mm:ss):"},
+					{td, [], [
+								{input, [{name, transaction_hour},   {type, text}, {maxlength, "2"}, {size, "2"}]},
+								{input, [{name, transaction_minute}, {type, text}, {maxlength, "2"}, {size, "2"}]},
+								{input, [{name, transaction_second}, {type, text}, {maxlength, "2"}, {size, "2"}]}
+							]}
+				]},
+				{tr, [], [
+					{td, [], "Price:"},
+					{td, [], {input, [{name, price}, {type, text}]}}
+				]},
+				{tr, [], [
+					{td, [], "Amount:"},
+					{td, [], {input, [{name, amount}, {type, text}]}}
+				]},
+				{tr, [], [
+				    {td, [], ""},
+					{td, [], {input, [{type, submit}]}}
+				]}
+			]}
+		}
+	}.
 
-form_template(ResultText) ->
-	"<div>
-	<form action=\"input_data.yaws\" method=\"post\">
-	  <fieldset>
-		<table>
-		<tr>
-			<td>Ценная бумага:</td>
-			<td><input type=\"text\" name=\"security\" value=\"\" /></td>
-		</tr>
-		<tr>
-			<td>Дата (dd/mm/yyyy):</td>
-			<td>
-			<input id=\"value-day-input-date\" value=\"\" type=\"hidden\">
-			<input maxlength=\"2\" size=\"2\" id=\"day-input-date\" type=\"text\">
-				<select id=\"month-input-date\">
-					<option value=\"1\">January</option>
-					<option value=\"2\">Febuary</option>
-					<option value=\"3\">March</option>
-					<option value=\"4\">April</option>
-					<option value=\"5\">May</option>
-					<option value=\"6\">June</option>
-					<option value=\"7\">July</option>
-					<option value=\"8\">August</option>
-					<option value=\"9\">September</option>
-					<option value=\"10\">October</option>
-					<option value=\"11\">November</option>
-					<option value=\"12\">December</option>
-				</select>
-			<input id=\"value-year-input-date\" value=\"\" type=\"hidden\">
-			<input maxlength=\"4\" size=\"4\" id=\"year-input-date\" type=\"text\">
-			</td>
-		</tr>
-		<tr>
-			<td>Время (hh:mm:ss):</td>
-			<td>
-			<input id=\"value-hour-input-time\" value=\"\" type=\"hidden\">
-			<input maxlength=\"2\" size=\"2\" id=\"hour-input-time\" type=\"text\">
-			<input id=\"value-minute-input-time\" value=\"\" type=\"hidden\">
-			<input maxlength=\"2\" size=\"2\" id=\"minute-input-time\" type=\"text\">
-			<input id=\"value-second-input-time\" value=\"\" type=\"hidden\">
-			<input maxlength=\"2\" size=\"2\" id=\"second-input-time\" type=\"text\">
-			<input value=\"\" name=\"date\" id=\"input-date\" type=\"hidden\">
-			</td>
-		</tr>
-		<tr>
-			<td>Цена (ед.):</td>
-			<td><input type=\"text\" name=\"price\" value=\"\" /></td>
-		</tr>
-		<tr>
-			<td>Объем сделки:</td>
-			<td><input type=\"text\" name=\"total_sum\" value=\"\" /></td>
-		</tr>
-		<tr>
-			<td> </td>
-			<td><input type=\"submit\" value=\"Отправить\" /></td>
-		</tr>
-		<tr>
-			<td>Result:</td>
-			<td>" ++ ResultText ++ "</td>
-		</tr>
-		</table>
-	  </fieldset>
-	  
-	</form>
-	</div>".
+
 </erl>
-
 <div>
-	<a href="./index.html">Back to home</a>
+	<a href="./index.yaws">Back to home page</a>
 </div>
 
 

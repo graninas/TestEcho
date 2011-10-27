@@ -1,0 +1,38 @@
+<html><head><title>Test for "Deals with security" - Data process</title></head>
+<body>
+
+<div><h1>Input data:</h1></div>
+
+<erl>
+
+out(A) ->
+	{ok, SecurityName}   = postvar(A, "security"),
+	{ok, TransactionDay} = postvar(A, "transaction_day"),
+	{ok, TransactionMonth} = postvar(A, "transaction_month"),
+	{ok, TransactionYear} = postvar(A, "transaction_year"),
+	{ok, TransactionHour} = postvar(A, "transaction_hour"),
+	{ok, TransactionMinute} = postvar(A, "transaction_minute"),
+	{ok, TransactionSecond} = postvar(A, "transaction_second"),
+	{ok, Price}  = postvar(A, "price"),
+	{ok, Amount} = postvar(A, "amount"),
+	{html, SecurityName
+			++ ":(" ++ TransactionDay
+			++ "/" ++ TransactionMonth
+			++ "/" ++ TransactionYear
+			++ " " ++ TransactionHour
+			++ ":" ++ TransactionMinute
+			++ ":" ++ TransactionSecond
+			++ ") "	++ Price
+			++ ", " ++ Amount
+	}.
+
+</erl>
+
+<div>
+	<p><a href="./data_input.yaws">Back to input data page</a></p>
+	<p><a href="./index.yaws">Back to home page</a></p>
+</div>
+
+
+</body>
+</html>
