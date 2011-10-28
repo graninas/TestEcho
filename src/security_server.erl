@@ -13,9 +13,10 @@
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
 		terminate/2, code_change/3]).
 
--export([data/0, add_transaction/1, report/1]).
+-export([data/0, add_transaction/1, report/1, load_test_data/0]).
 
--import(data_collection, [fetch_data/2, filter_data/2, collect/2, test/1]).
+-import(data_collection, [fetch_data/2, filter_data/2, collect/2, test/0]).
+-import(test_data, [test_data_dict/0]).
 
 -define(SERVER, ?MODULE).
 
@@ -58,6 +59,9 @@ report(Filter) ->
 data() ->
 	gen_server:call(?SERVER, get_data).
 
+load_test_data() ->
+	gen_server:call(?SERVER, load_test_data).
+
 %%====================================================================
 %% gen_server callbacks
 %%====================================================================
@@ -96,6 +100,10 @@ handle_call({add_transaction, Transaction}, _, State) ->
 	{DateTime, SecData} = Transaction,
 	NewState = dict:store(DateTime, SecData, State),
 	{reply, NewState, NewState};
+
+handle_call(load_test_data, _, _State) ->
+	TestDict = test_data:test_data_dict(),
+	{reply, TestDict, TestDict};
 
 %% Called for unregistered cases.
 handle_call(_Request, _From, State) ->

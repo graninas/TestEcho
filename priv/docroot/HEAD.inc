@@ -6,7 +6,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <html>
 
 <head>
- <title>Test for "Deals with security"</title>
+ <title>Test for "Deals with security%%Pl%%"</title>
 </head>
 
 <body>

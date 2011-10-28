@@ -1995,3 +1995,303 @@ Stack: [{gen_server,call,2},
 
 =INFO REPORT==== 28-Oct-2011::16:34:11 ===
 stop_ready([], <0.55.0>)
+
+=ERROR REPORT==== 28-Oct-2011::19:30:06 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:32:
+ illegal pattern
+generated file at: /home/gas/.yaws/yaws/embedded/m4.erl
+
+=ERROR REPORT==== 28-Oct-2011::19:34:56 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:47:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m7.erl
+
+=ERROR REPORT==== 28-Oct-2011::19:35:05 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:28:
+ variable 'Act1' is unbound
+generated file at: /home/gas/.yaws/yaws/embedded/m10.erl
+
+=ERROR REPORT==== 28-Oct-2011::19:50:23 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:34:
+ variable 'DataList' is unbound
+generated file at: /home/gas/.yaws/yaws/embedded/m4.erl
+
+=ERROR REPORT==== 28-Oct-2011::20:42:06 ===
+** Generic server ehtml_server terminating 
+** Last message in was {list_to_table,[{"Test case","Expected","Actual",
+                                        "Result"},
+                                       {"Data loading on server...","26","26",
+                                        "Success."},
+                                       {"Collecting through server...","7",
+                                        "7","Success."},
+                                       {"Collecting through module...","7",
+                                        "7","Success."},
+                                       {[],[],[],[]},
+                                       "DateTime","Open Price","ClosePrice",
+                                       "MinPrice","MaxPrice","TotalAmount",
+                                       {{{2012,4,11},{10,0,0}},
+                                        1.21,1.22,1.21,1.22,1600},
+                                       {{{2012,4,11},{11,0,0}},
+                                        1.24,1.26,1.23,1.26,3500},
+                                       {{{2012,4,11},{12,0,0}},
+                                        1.25,1.25,1.25,1.25,300},
+                                       {{{2012,4,11},{13,0,0}},
+                                        1.22,1.23,1.22,1.23,2200},
+                                       {{{2012,4,11},{14,0,0}},
+                                        1.24,1.22,1.22,1.25,5200},
+                                       {{{2012,4,11},{15,0,0}},
+                                        1.22,1.22,1.22,1.22,200},
+                                       {{{2012,4,11},{16,0,0}},
+                                        1.24,1.24,1.24,1.24,400}]}
+** When Server state == {ehtml,{p,[],"Ehtml server ok."}}
+** Reason for termination == 
+** {function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,handle_call,3},
+                     {gen_server,handle_msg,5},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 28-Oct-2011::20:42:06 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:8
+Reason: {{function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,handle_call,3},
+                           {gen_server,handle_msg,5},
+                           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [ehtml_server,
+                      {list_to_table,[{"Test case","Expected","Actual",
+                                       "Result"},
+                                      {"Data loading on server...","26","26",
+                                       "Success."},
+                                      {"Collecting through server...","7","7",
+                                       "Success."},
+                                      {"Collecting through module...","7","7",
+                                       "Success."},
+                                      {[],[],[],[]},
+                                      "DateTime","Open Price","ClosePrice",
+                                      "MinPrice","MaxPrice","TotalAmount",
+                                      {{{2012,4,11},{10,0,0}},
+                                       1.21,1.22,1.21,1.22,1600},
+                                      {{{2012,4,11},{11,0,0}},
+                                       1.24,1.26,1.23,1.26,3500},
+                                      {{{2012,4,11},{12,0,0}},
+                                       1.25,1.25,1.25,1.25,300},
+                                      {{{2012,4,11},{13,0,0}},
+                                       1.22,1.23,1.22,1.23,2200},
+                                      {{{2012,4,11},{14,0,0}},
+                                       1.24,1.22,1.22,1.25,5200},
+                                      {{{2012,4,11},{15,0,0}},
+                                       1.22,1.22,1.22,1.22,200},
+                                      {{{2012,4,11},{16,0,0}},
+                                       1.24,1.24,1.24,1.24,400}]}]}}
+Req: {http_request,'GET',{abs_path,"/data_test.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m4,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 28-Oct-2011::20:42:06 ===
+stop_ready([], <0.53.0>)
+
+=ERROR REPORT==== 28-Oct-2011::20:59:43 ===
+** Generic server ehtml_server terminating 
+** Last message in was {list_to_table,[{"Test case","Expected","Actual",
+                                        "Result"},
+                                       {"Data loading on server...","26","26",
+                                        "Success."},
+                                       {"Collecting through server...","7",
+                                        "7","Success."},
+                                       {"Collecting through module...","7",
+                                        "7","Success."},
+                                       {[],[],[],[]},
+                                       "DateTime","Open Price","ClosePrice",
+                                       "MinPrice","MaxPrice","TotalAmount",
+                                       {{{2012,4,11},{10,0,0}},
+                                        1.21,1.22,1.21,1.22,1600},
+                                       {{{2012,4,11},{11,0,0}},
+                                        1.24,1.26,1.23,1.26,3500},
+                                       {{{2012,4,11},{12,0,0}},
+                                        1.25,1.25,1.25,1.25,300},
+                                       {{{2012,4,11},{13,0,0}},
+                                        1.22,1.23,1.22,1.23,2200},
+                                       {{{2012,4,11},{14,0,0}},
+                                        1.24,1.22,1.22,1.25,5200},
+                                       {{{2012,4,11},{15,0,0}},
+                                        1.22,1.22,1.22,1.22,200},
+                                       {{{2012,4,11},{16,0,0}},
+                                        1.24,1.24,1.24,1.24,400}]}
+** When Server state == {ehtml,{p,[],"Ehtml server ok."}}
+** Reason for termination == 
+** {function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,handle_call,3},
+                     {gen_server,handle_msg,5},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=INFO REPORT==== 28-Oct-2011::20:59:43 ===
+stop_ready([], <0.53.0>)
+
+=ERROR REPORT==== 28-Oct-2011::20:59:43 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:8
+Reason: {{function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,handle_call,3},
+                           {gen_server,handle_msg,5},
+                           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [ehtml_server,
+                      {list_to_table,[{"Test case","Expected","Actual",
+                                       "Result"},
+                                      {"Data loading on server...","26","26",
+                                       "Success."},
+                                      {"Collecting through server...","7","7",
+                                       "Success."},
+                                      {"Collecting through module...","7","7",
+                                       "Success."},
+                                      {[],[],[],[]},
+                                      "DateTime","Open Price","ClosePrice",
+                                      "MinPrice","MaxPrice","TotalAmount",
+                                      {{{2012,4,11},{10,0,0}},
+                                       1.21,1.22,1.21,1.22,1600},
+                                      {{{2012,4,11},{11,0,0}},
+                                       1.24,1.26,1.23,1.26,3500},
+                                      {{{2012,4,11},{12,0,0}},
+                                       1.25,1.25,1.25,1.25,300},
+                                      {{{2012,4,11},{13,0,0}},
+                                       1.22,1.23,1.22,1.23,2200},
+                                      {{{2012,4,11},{14,0,0}},
+                                       1.24,1.22,1.22,1.25,5200},
+                                      {{{2012,4,11},{15,0,0}},
+                                       1.22,1.22,1.22,1.22,200},
+                                      {{{2012,4,11},{16,0,0}},
+                                       1.24,1.24,1.24,1.24,400}]}]}}
+Req: {http_request,'GET',{abs_path,"/data_test.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::21:02:09 ===
+** Generic server ehtml_server terminating 
+** Last message in was {list_to_table,[{"Test case","Expected","Actual",
+                                        "Result"},
+                                       {"Data loading on server...","26","26",
+                                        "Success."},
+                                       {"Collecting through server...","7",
+                                        "7","Success."},
+                                       {"Collecting through module...","7",
+                                        "7","Success."},
+                                       "DateTime","Open Price","ClosePrice",
+                                       "MinPrice","MaxPrice","TotalAmount"]}
+** When Server state == {ehtml,{p,[],"Ehtml server ok."}}
+** Reason for termination == 
+** {function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,handle_call,3},
+                     {gen_server,handle_msg,5},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 28-Oct-2011::21:02:09 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:8
+Reason: {{function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,handle_call,3},
+                           {gen_server,handle_msg,5},
+                           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [ehtml_server,
+                      {list_to_table,[{"Test case","Expected","Actual",
+                                       "Result"},
+                                      {"Data loading on server...","26","26",
+                                       "Success."},
+                                      {"Collecting through server...","7","7",
+                                       "Success."},
+                                      {"Collecting through module...","7","7",
+                                       "Success."},
+                                      "DateTime","Open Price","ClosePrice",
+                                      "MinPrice","MaxPrice","TotalAmount"]}]}}
+Req: {http_request,'GET',{abs_path,"/data_test.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 28-Oct-2011::21:02:09 ===
+stop_ready([], <0.53.0>)
+
+=ERROR REPORT==== 28-Oct-2011::21:07:09 ===
+** Generic server ehtml_server terminating 
+** Last message in was {list_to_table,[{"Test case","Expected","Actual",
+                                        "Result"},
+                                       {"Data loading on server...","26","26",
+                                        "Success."},
+                                       {"Collecting through server...","7",
+                                        "7","Success."},
+                                       {"Collecting through module...","7",
+                                        "7","Success."},
+                                       "DateTime","Open Price","ClosePrice",
+                                       "MinPrice","MaxPrice","TotalAmount"]}
+** When Server state == {ehtml,{p,[],"Ehtml server ok."}}
+** Reason for termination == 
+** {function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,make_table_rows,1},
+                     {ehtml_server,handle_call,3},
+                     {gen_server,handle_msg,5},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 28-Oct-2011::21:07:09 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:8
+Reason: {{function_clause,[{ehtml_server,make_table_row,["DateTime"]},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,make_table_rows,1},
+                           {ehtml_server,handle_call,3},
+                           {gen_server,handle_msg,5},
+                           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [ehtml_server,
+                      {list_to_table,[{"Test case","Expected","Actual",
+                                       "Result"},
+                                      {"Data loading on server...","26","26",
+                                       "Success."},
+                                      {"Collecting through server...","7","7",
+                                       "Success."},
+                                      {"Collecting through module...","7","7",
+                                       "Success."},
+                                      "DateTime","Open Price","ClosePrice",
+                                      "MinPrice","MaxPrice","TotalAmount"]}]}}
+Req: {http_request,'GET',{abs_path,"/data_test.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 28-Oct-2011::21:07:09 ===
+stop_ready([], <0.53.0>)

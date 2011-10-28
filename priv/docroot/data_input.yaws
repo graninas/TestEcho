@@ -1,5 +1,6 @@
-<html><head><title>Test for "Deals with security" - Input data</title></head>
-<body>
+<erl>
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Input data"}]}.
+</erl>
 
 <div><h1>Input data:</h1></div>
 
@@ -86,5 +87,3 @@ out(A) ->
 </div>
 
 
-</body>
-</html>

@@ -1,5 +1,5 @@
 <erl>
-	out(A) -> {ssi, "HEAD.inc","[]",[]}.
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", ""}]}.
 </erl>
 <h1>Very simple "Deals with security" test site</h1></div>
 
@@ -9,6 +9,10 @@
 
 <p>
 <a href="./data_output.yaws">View data</a>
+</p>
+
+<p>
+<a href="./data_test.yaws">Testing data and application</a>
 </p>
 
 <erl>
