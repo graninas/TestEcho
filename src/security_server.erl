@@ -37,7 +37,7 @@ start() ->
 %% Transaction = {DateTime, {SecurityName, Price, Amount}}
 %%--------------------------------------------------------------------
 add_transaction(Transaction) ->
-	gen_server:cast(?SERVER, {add_transaction, Transaction}).
+	gen_server:call(?SERVER, {add_transaction, Transaction}).
 
 %%--------------------------------------------------------------------
 %% Function: report(Filter) -> {reply, ResultList, State} |
@@ -70,7 +70,7 @@ data() ->
 %% Description: Initiates the server, returns empty Dict.
 %%--------------------------------------------------------------------
 init(_Args) ->
-  {ok, dict:new()}.
+	{ok, dict:new()}.
 
 %%--------------------------------------------------------------------
 %% Function: %% handle_call(Request, From, State) ->
@@ -91,6 +91,12 @@ handle_call({report_data, Filter}, _, State) ->
 handle_call(get_data, _, State) ->
 	{reply, State, State};
 
+%% Called for adding transaction.
+handle_call({add_transaction, Transaction}, _, State) ->
+	{DateTime, SecData} = Transaction,
+	NewState = dict:store(DateTime, SecData, State),
+	{reply, NewState, NewState};
+
 %% Called for unregistered cases.
 handle_call(_Request, _From, State) ->
 	{reply, ok, State}.
@@ -101,10 +107,6 @@ handle_call(_Request, _From, State) ->
 %%                                      {stop, Reason, State}
 %% Description: Handling cast messages
 %%--------------------------------------------------------------------
-%% Casted for adding new data.
-handle_cast({add_transaction, Transaction}, State) ->
-	{DateTime, Security, Price, Amount} = Transaction,
-	{noreply, dict:store(DateTime, {Security, Price, Amount}, State)};
 
 %% Casted for unregistered cases.
 handle_cast(_Msg, State) ->

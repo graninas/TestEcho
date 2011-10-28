@@ -7,24 +7,48 @@
 
 out(A) ->
 	{ok, SecurityName}   = postvar(A, "security"),
-	{ok, TransactionDay} = postvar(A, "transaction_day"),
-	{ok, TransactionMonth} = postvar(A, "transaction_month"),
-	{ok, TransactionYear} = postvar(A, "transaction_year"),
-	{ok, TransactionHour} = postvar(A, "transaction_hour"),
-	{ok, TransactionMinute} = postvar(A, "transaction_minute"),
-	{ok, TransactionSecond} = postvar(A, "transaction_second"),
+	{ok, Day} = postvar(A, "transaction_day"),
+	{ok, Month} = postvar(A, "transaction_month"),
+	{ok, Year} = postvar(A, "transaction_year"),
+	{ok, Hour} = postvar(A, "transaction_hour"),
+	{ok, Minute} = postvar(A, "transaction_minute"),
+	{ok, Second} = postvar(A, "transaction_second"),
 	{ok, Price}  = postvar(A, "price"),
 	{ok, Amount} = postvar(A, "amount"),
-	{html, SecurityName
-			++ ":(" ++ TransactionDay
-			++ "/" ++ TransactionMonth
-			++ "/" ++ TransactionYear
-			++ " " ++ TransactionHour
-			++ ":" ++ TransactionMinute
-			++ ":" ++ TransactionSecond
-			++ ") "	++ Price
-			++ ", " ++ Amount
-	}.
+
+	SN = list_to_atom(SecurityName),
+	Y  = list_to_integer(Year),
+	M  = list_to_integer(Month),
+	D  = list_to_integer(Day),
+	H  = list_to_integer(Hour),
+	MM = list_to_integer(Minute),
+	S  = list_to_integer(Second),
+	P  = case string:to_float(Price) of
+			{error, _Reason} -> list_to_integer(Price);
+			{N, _} -> N
+		 end,
+	Am = case string:to_float(Amount) of
+			{error, _Reason2} -> list_to_integer(Amount);
+			{N2, _} -> N2
+		 end,
+
+	DateTime = {{Y, M, D}, {H, MM, S}},
+	SecData  = {SN, P, Am},
+	security_server:add_transaction({DateTime, SecData}),
+
+	{ehtml, {p, [], "Added (" 
+		++ SecurityName
+		++ ":[" ++ Day
+		++ "/" ++ Month
+		++ "/" ++ Year
+		++ " " ++ Hour
+		++ ":" ++ Minute
+		++ ":" ++ Second
+		++ "] {P:" ++ Price
+		++ ", A:" ++ Amount
+		++ "})."
+		}}.
+
 
 </erl>
 

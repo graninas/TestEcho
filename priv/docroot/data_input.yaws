@@ -12,7 +12,7 @@ out(A) ->
 			end,
 	ResHtml.
 
-show(_Result) ->
+show(Result) ->
 	{ehtml, 
 		{form, [{action, "data_process.yaws"}, {method, "post"}],
 			{table, [], [
@@ -60,6 +60,10 @@ show(_Result) ->
 				{tr, [], [
 				    {td, [], ""},
 					{td, [], {input, [{type, submit}]}}
+				]},
+				{tr, [], [
+					{td, [], ""},
+					{td, [], Result}
 				]}
 			]}
 		}
