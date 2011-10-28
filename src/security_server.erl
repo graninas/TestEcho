@@ -13,7 +13,9 @@
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
 		terminate/2, code_change/3]).
 
--export([data/0, add_transaction/1, report/1, load_test_data/0]).
+-export([data/0, set_data/1, clear_data/0]).
+-export([add_transaction/1, report/1]).
+-export([load_test_data/0, merge_test_data/0]).
 
 -import(data_collection, [fetch_data/2, filter_data/2, collect/2, test/0]).
 -import(test_data, [test_data_dict/0]).
@@ -62,6 +64,14 @@ data() ->
 load_test_data() ->
 	gen_server:call(?SERVER, load_test_data).
 
+merge_test_data() ->
+	gen_server:call(?SERVER, merge_test_data).
+
+set_data(NewDict) ->
+	gen_server:cast(?SERVER, {set_data, NewDict}).
+
+clear_data() ->
+	gen_server:cast(?SERVER, clear_data).
 %%====================================================================
 %% gen_server callbacks
 %%====================================================================
@@ -101,9 +111,15 @@ handle_call({add_transaction, Transaction}, _, State) ->
 	NewState = dict:store(DateTime, SecData, State),
 	{reply, NewState, NewState};
 
-handle_call(load_test_data, _, _State) ->
+handle_call(load_test_data, _, OldDict) ->
 	TestDict = test_data:test_data_dict(),
-	{reply, TestDict, TestDict};
+	{reply, {OldDict, TestDict}, TestDict};
+
+handle_call(merge_test_data, _, OldDict) ->
+	TestDict = test_data:test_data_dict(),
+	MergeF = fun(_, Val1, _) -> Val1 end,
+	NewDict = dict:merge(MergeF, TestDict, OldDict),
+	{reply, NewDict, NewDict};
 
 %% Called for unregistered cases.
 handle_call(_Request, _From, State) ->
@@ -115,6 +131,12 @@ handle_call(_Request, _From, State) ->
 %%                                      {stop, Reason, State}
 %% Description: Handling cast messages
 %%--------------------------------------------------------------------
+
+handle_cast({set_data, NewDict}, _) ->
+	{noreply, NewDict};
+
+handle_cast(clear_data, _) ->
+	{noreply, dict:new()};
 
 %% Casted for unregistered cases.
 handle_cast(_Msg, State) ->

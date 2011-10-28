@@ -1,5 +1,5 @@
 <erl>
-	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Input data"}]}.
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data input"}]}.
 </erl>
 
 <div><h1>Input data:</h1></div>
@@ -69,6 +69,10 @@ out(A) ->
 				]}
 	]},
 	{tr, [], [
+	    {td, [], "Merge hardcoded test data"},
+		{td, [], {input, [{type, checkbox}, {name, merge_test_data}, {value, "merge_test_data"}]}}
+	]},
+	{tr, [], [
 	    {td, [], ""},
 		{td, [], {input, [{type, submit}]}}
 	]},
@@ -77,13 +81,14 @@ out(A) ->
 		{td, [], Result}
 	]}
 ]}
-
 }}.
 
 
 </erl>
-<div>
-	<a href="./index.yaws">Back to home page</a>
-</div>
+
+
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
 
 

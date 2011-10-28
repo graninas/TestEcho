@@ -6,6 +6,12 @@
 <erl>
 
 out(A) ->
+
+	case postvar(A, "merge_test_data") of
+		{ok, _} -> security_server:merge_test_data();
+		_ -> do_nothing
+	end,
+
 	{ok, DTMethod} = postvar(A, "datetime_method"),
 	
 	{ok, SecurityName}   = postvar(A, "security"),
@@ -44,17 +50,17 @@ out(A) ->
 	SecData  = {SN, P, Am},
 	security_server:add_transaction({DateTime, SecData}),
 
-	Result = "Added",
+	Result = "Added.",
 
 	{ehtml, {p, [], Result}}.
 
 </erl>
 
-<div>
-	<p><a href="./data_input.yaws">Back to input data page</a></p>
-	<p><a href="./index.yaws">Back to home page</a></p>
-</div>
 
+<p><a href="./data_input.yaws">Input data</a></p>
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
 
 </body>
 </html>

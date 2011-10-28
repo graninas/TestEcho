@@ -2295,3 +2295,36 @@ Stack: [{gen_server,call,2},
 
 =INFO REPORT==== 28-Oct-2011::21:07:09 ===
 stop_ready([], <0.53.0>)
+
+=ERROR REPORT==== 28-Oct-2011::22:24:45 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_test.yaws:56:
+ syntax error before: '}'
+generated file at: /home/gas/.yaws/yaws/embedded/m7.erl
+
+=ERROR REPORT==== 28-Oct-2011::22:49:55 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_input.yaws:82:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m35.erl
+
+=ERROR REPORT==== 28-Oct-2011::22:53:30 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_input.yaws:85:
+ syntax error before: '}'
+generated file at: /home/gas/.yaws/yaws/embedded/m41.erl
+
+=ERROR REPORT==== 28-Oct-2011::23:10:01 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,undefined},
+         [{m56,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m56,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
