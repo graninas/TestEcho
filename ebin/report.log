@@ -1612,3 +1612,386 @@ Yaws process died: {function_clause,
                         {yaws_server,aloop,3},
                         {yaws_server,acceptor0,2},
                         {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 28-Oct-2011::13:24:03 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{name,manual_datetime,{type,radio}}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::13:24:25 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{name,manual_datetime,{type,radio}}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::13:24:28 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{name,manual_datetime,{type,radio}}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::13:28:45 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_input.yaws:28:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m16.erl
+
+=ERROR REPORT==== 28-Oct-2011::13:30:34 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_input.yaws:26:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m18.erl
+
+=ERROR REPORT==== 28-Oct-2011::13:30:46 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_input.yaws:26:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m19.erl
+
+=ERROR REPORT==== 28-Oct-2011::13:40:14 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {undef,[{data_input,out,
+                            ["result=Added (ECHO:[10/4/2011 10:10:10] {P:1.23, A:2100})."]},
+                {yaws_server,deliver_dyn_part,8},
+                {yaws_server,aloop,3},
+                {yaws_server,acceptor0,2},
+                {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{data_input,out,
+                    ["result=Added (ECHO:[10/4/2011 10:10:10] {P:1.23, A:2100})."]},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::13:41:01 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {undef,[{data_input,out,[]},
+                {yaws_server,deliver_dyn_part,8},
+                {yaws_server,aloop,3},
+                {yaws_server,acceptor0,2},
+                {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{data_input,out,[]},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::13:41:04 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {undef,[{data_input,out,[]},
+                {yaws_server,deliver_dyn_part,8},
+                {yaws_server,aloop,3},
+                {yaws_server,acceptor0,2},
+                {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{data_input,out,[]},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::14:16:39 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:49:
+ variable 'Day' unsafe in 'case' (line 18)
+generated file at: /home/gas/.yaws/yaws/embedded/m28.erl
+
+=ERROR REPORT==== 28-Oct-2011::14:19:55 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:48:
+ variable 'Date' is unbound
+generated file at: /home/gas/.yaws/yaws/embedded/m29.erl
+
+=ERROR REPORT==== 28-Oct-2011::14:20:04 ===
+<pre> 
+{badarg,[{erlang,atom_to_list,[{2011,10,28}]},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_server,safe_ehtml_expand,1},
+         {yaws_server,handle_out_reply,5},
+         {yaws_server,deliver_dyn_part,8}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:21:38 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_expand,[{2011,10,28}]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:22:00 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_expand,[{2011,10,28}]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:23:26 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:50:
+ syntax error before: '++'
+generated file at: /home/gas/.yaws/yaws/embedded/m33.erl
+
+=ERROR REPORT==== 28-Oct-2011::14:23:37 ===
+<pre> 
+{badarg,[{erlang,atom_to_list,[{2011,10,28}]},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_server,safe_ehtml_expand,1},
+         {yaws_server,handle_out_reply,5},
+         {yaws_server,deliver_dyn_part,8}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:56:16 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{ssi,"input_form.inc","%%",
+                                   [{"ResultPlaceholder",[]}]}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3},
+                  {yaws_server,acceptor0,2}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:57:58 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{ssi,"input_form.inc","%%",
+                                   [{"ResultPlaceholder",[]}]}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3},
+                  {yaws_server,acceptor0,2}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:57:58 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{ssi,"input_form.inc","%%",
+                                   [{"ResultPlaceholder",[]}]}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3},
+                  {yaws_server,acceptor0,2}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:57:59 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{ssi,"input_form.inc","%%",
+                                   [{"ResultPlaceholder",[]}]}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3},
+                  {yaws_server,acceptor0,2}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::14:58:00 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{ssi,"input_form.inc","%%",
+                                   [{"ResultPlaceholder",[]}]}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3},
+                  {yaws_server,acceptor0,2}]}
+ </pre>
+
+=ERROR REPORT==== 28-Oct-2011::15:15:40 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:15:45 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:15:47 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:15:48 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:24 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:24 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:25 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:25 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:25 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:26 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:26 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:26 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:27 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:27 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:27 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:27 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:40 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:40 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:16:43 ===
+Failed to yssi "data_input.yaws?result=Added."
+
+=ERROR REPORT==== 28-Oct-2011::15:20:11 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws"
+=ERROR REPORT==== 28-Oct-2011::15:20:11 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,undefined},
+         [{m51,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'GET',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m51,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::15:20:13 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws"
+=ERROR REPORT==== 28-Oct-2011::15:20:13 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,undefined},
+         [{m51,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'GET',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m51,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::16:34:11 ===
+** Generic server ehtml_server terminating 
+** Last message in was {list_to_table,[{{{2011,10,28},{16,34,2}},
+                                        {'ECHO',1.22,4.2e3}},
+                                       {{{2011,10,28},{16,34,8}},
+                                        {'ECHO',1.22,3644.0}},
+                                       {{{2011,10,28},{16,33,56}},
+                                        {'ECHO',1.22,3.5e3}}]}
+** When Server state == {ehtml,{p,[],"Ehtml server ok."}}
+** Reason for termination == 
+** {badarg,[{erlang,list_to_float,[1.22]},
+            {ehtml_server,make_table_row,1},
+            {ehtml_server,make_table_rows,1},
+            {ehtml_server,handle_call,3},
+            {gen_server,handle_msg,5},
+            {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 28-Oct-2011::16:34:11 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_output.yaws:4
+Reason: {{badarg,[{erlang,list_to_float,[1.22]},
+                  {ehtml_server,make_table_row,1},
+                  {ehtml_server,make_table_rows,1},
+                  {ehtml_server,handle_call,3},
+                  {gen_server,handle_msg,5},
+                  {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [ehtml_server,
+                      {list_to_table,[{{{2011,10,28},{16,34,2}},
+                                       {'ECHO',1.22,4.2e3}},
+                                      {{{2011,10,28},{16,34,8}},
+                                       {'ECHO',1.22,3644.0}},
+                                      {{{2011,10,28},{16,33,56}},
+                                       {'ECHO',1.22,3.5e3}}]}]}}
+Req: {http_request,'GET',{abs_path,"/data_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 28-Oct-2011::16:34:11 ===
+stop_ready([], <0.55.0>)

@@ -17,14 +17,12 @@ start_tracer() ->
 
 start_link() ->
     {ok, PID} = supervisor:start_link({local, ?MODULE}, ?MODULE, []),
-	unlink(PID).
+	unlink(PID). %PID = console pid(). Unlinked for console-crash independing.
 
 init([]) ->
     TestEcho = {test_echo, {test_echo, start, []}, permanent,2000,worker,[test_echo]},
 	SecurityServer = {security_server, {security_server, start, []}, permanent,2000,worker,[security_server]},
+	EhtmlServer = {ehtml_server, {ehtml_server, start, []}, permanent,2000,worker,[ehtml_server]},
 
-%	code:load_file(data_collection),
-%	code:load_file(date_manipulation),
-
-    {ok,{{one_for_one,0,1}, [TestEcho, SecurityServer]}}.
+    {ok,{{one_for_one,0,1}, [TestEcho, SecurityServer, EhtmlServer]}}.
 

@@ -6,49 +6,47 @@
 <erl>
 
 out(A) ->
+	{ok, DTMethod} = postvar(A, "datetime_method"),
+	
 	{ok, SecurityName}   = postvar(A, "security"),
-	{ok, Day} = postvar(A, "transaction_day"),
-	{ok, Month} = postvar(A, "transaction_month"),
-	{ok, Year} = postvar(A, "transaction_year"),
-	{ok, Hour} = postvar(A, "transaction_hour"),
-	{ok, Minute} = postvar(A, "transaction_minute"),
-	{ok, Second} = postvar(A, "transaction_second"),
+	SN = list_to_atom(SecurityName),
+	
+	DateTime = case DTMethod of
+				"local_datetime" -> erlang:localtime();
+				_ ->
+					{ok, Day} = postvar(A, "transaction_day"),
+					{ok, Month} = postvar(A, "transaction_month"),
+					{ok, Year} = postvar(A, "transaction_year"),
+					{ok, Hour} = postvar(A, "transaction_hour"),
+					{ok, Minute} = postvar(A, "transaction_minute"),
+					{ok, Second} = postvar(A, "transaction_second"),
+					Y  = list_to_integer(Year),
+					M  = list_to_integer(Month),
+					D  = list_to_integer(Day),
+					H  = list_to_integer(Hour),
+					MM = list_to_integer(Minute),
+					S  = list_to_integer(Second),
+					{{Y,M,D}, {H,MM,S}}
+				end,
+
 	{ok, Price}  = postvar(A, "price"),
 	{ok, Amount} = postvar(A, "amount"),
 
-	SN = list_to_atom(SecurityName),
-	Y  = list_to_integer(Year),
-	M  = list_to_integer(Month),
-	D  = list_to_integer(Day),
-	H  = list_to_integer(Hour),
-	MM = list_to_integer(Minute),
-	S  = list_to_integer(Second),
 	P  = case string:to_float(Price) of
-			{error, _Reason} -> list_to_integer(Price);
+			{error, _} -> list_to_integer(Price) / 1.0;
 			{N, _} -> N
 		 end,
 	Am = case string:to_float(Amount) of
-			{error, _Reason2} -> list_to_integer(Amount);
+			{error, _} -> list_to_integer(Amount) / 1.0;
 			{N2, _} -> N2
 		 end,
 
-	DateTime = {{Y, M, D}, {H, MM, S}},
 	SecData  = {SN, P, Am},
 	security_server:add_transaction({DateTime, SecData}),
 
-	{ehtml, {p, [], "Added (" 
-		++ SecurityName
-		++ ":[" ++ Day
-		++ "/" ++ Month
-		++ "/" ++ Year
-		++ " " ++ Hour
-		++ ":" ++ Minute
-		++ ":" ++ Second
-		++ "] {P:" ++ Price
-		++ ", A:" ++ Amount
-		++ "})."
-		}}.
+	Result = "Added",
 
+	{ehtml, {p, [], Result}}.
 
 </erl>
 
