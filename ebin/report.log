@@ -2328,3 +2328,275 @@ Stack: [{m56,out,1},
         {yaws_server,aloop,3},
         {yaws_server,acceptor0,2},
         {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:24:21 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:54:
+ variable 'Day' unsafe in 'case' (line 24)
+generated file at: /home/gas/.yaws/yaws/embedded/m24.erl
+
+=ERROR REPORT==== 28-Oct-2011::23:26:53 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:20:
+ variable 'Day' unsafe in 'case' (line 25)
+generated file at: /home/gas/.yaws/yaws/embedded/m25.erl
+
+=ERROR REPORT==== 28-Oct-2011::23:26:55 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:20:
+ variable 'Day' unsafe in 'case' (line 25)
+generated file at: /home/gas/.yaws/yaws/embedded/m26.erl
+
+=ERROR REPORT==== 28-Oct-2011::23:26:57 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:20:
+ variable 'Day' unsafe in 'case' (line 25)
+generated file at: /home/gas/.yaws/yaws/embedded/m27.erl
+
+=ERROR REPORT==== 28-Oct-2011::23:27:49 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,27,49}}},
+         [{m28,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m28,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:01 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,1}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:02 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,2}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:02 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,2}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:02 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,2}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:02 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,2}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:02 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,2}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:03 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,3}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:03 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,3}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:03 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,3}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:03 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,3}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:03 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,3}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:29:03 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:6
+Reason: {{badmatch,{{2011,10,28},{23,29,3}}},
+         [{m29,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{m29,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 28-Oct-2011::23:36:46 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:20:
+ variable 'Minute' unsafe in 'case' (line 25)
+generated file at: /home/gas/.yaws/yaws/embedded/m30.erl
+
+=ERROR REPORT==== 28-Oct-2011::23:37:09 ===
+Yaws process died: {{badmatch,<<"\n<p><a href=\"./data_input.yaws\">Input data</a></p>\n<p><a href=\"./data_output.yaws\">View data</a></p>\n<p><a href=\"./data_test.yaws\">Security server tests</a></p>\n<p><a href=\"./index.yaws\">Home page</a></p>\n\n</body>\n</html>\n">>},
+                    [{yaws_server,skip_data,2},
+                     {yaws_server,deliver_dyn_file,6},
+                     {yaws_server,aloop,3},
+                     {yaws_server,acceptor0,2},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 28-Oct-2011::23:42:14 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:74:
+ variable 'IsTestDataMerged' is unbound
+generated file at: /home/gas/.yaws/yaws/embedded/m34.erl
