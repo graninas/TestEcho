@@ -1,5 +1,6 @@
-<html><head><title>Test for "Deals with security" - Data process</title></head>
-<body>
+<erl>
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data process"}]}.
+</erl>
 
 <div><h1>Results</h1></div>
 
@@ -63,8 +64,8 @@ out(A) ->
 		++ "/" ++ Month
 		++ "/" ++ Year
 		++ " " ++ Hour
-		++ " " ++ Minute
-		++ " " ++ Second
+		++ ":" ++ Minute
+		++ ":" ++ Second
 		++ "} " ++ SecurityName
 		++ ", P:" ++ Price
 		++ " A:" ++ Amount,
@@ -80,11 +81,13 @@ m(_) -> "".
 
 </erl>
 
-
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
 <p><a href="./index.yaws">Home page</a></p>
 
-</body>
-</html>
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

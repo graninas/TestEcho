@@ -1,11 +1,15 @@
 <erl>
 	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", ""}]}.
 </erl>
+
+
 <h1>Very simple "Deals with security" test site</h1></div>
 
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
 
 <erl>
 out(A) -> {ssi,"END.inc",[],[]}.

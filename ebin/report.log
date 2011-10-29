@@ -2600,3 +2600,84 @@ Yaws process died: {{badmatch,<<"\n<p><a href=\"./data_input.yaws\">Input data</
 Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:74:
  variable 'IsTestDataMerged' is unbound
 generated file at: /home/gas/.yaws/yaws/embedded/m34.erl
+
+=ERROR REPORT==== 29-Oct-2011::00:27:38 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:13:
+ syntax error before: '{'
+generated file at: /home/gas/.yaws/yaws/embedded/m82.erl
+
+=ERROR REPORT==== 29-Oct-2011::00:27:56 ===
+Yaws process died: {{badmatch,<<>>},
+                    [{yaws_server,skip_data,2},
+                     {yaws_server,deliver_dyn_file,6},
+                     {yaws_server,aloop,3},
+                     {yaws_server,acceptor0,2},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::00:27:56 ===
+Yaws process died: {{badmatch,<<>>},
+                    [{yaws_server,skip_data,2},
+                     {yaws_server,deliver_dyn_file,6},
+                     {yaws_server,aloop,3},
+                     {yaws_server,acceptor0,2},
+                     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::11:56:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m16.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:32 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m19.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m22.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m25.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m28.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m31.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m34.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:33 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m37.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:34 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m40.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:34 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m43.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:34 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m46.erl
+
+=ERROR REPORT==== 29-Oct-2011::11:57:34 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
+ syntax error before: ']'
+generated file at: /home/gas/.yaws/yaws/embedded/m49.erl
