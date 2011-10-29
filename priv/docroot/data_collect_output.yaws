@@ -1,0 +1,30 @@
+<erl>
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data collect output"}]}.
+</erl>
+
+<div><h1>Filtered and collected data:</h1></div>
+
+<p>
+<erl>
+
+out(A) ->
+
+	
+
+	{ehtml, {p, [], []}}.
+
+</erl>
+</p>
+
+
+
+<p><a href="./data_input.yaws">Input data</a></p>
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
+
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

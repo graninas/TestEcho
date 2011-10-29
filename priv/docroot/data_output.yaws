@@ -1,0 +1,37 @@
+<erl>
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data output"}]}.
+</erl>
+
+<div><h1>Full data in data store:</h1></div>
+
+<p>
+<erl>
+
+out(A) ->
+	DataDict = security_server:data(),
+	DataList = dict:to_list(DataDict),
+
+	Headers = [{"Datetime", "SecurityName", "Price", "Amount"},
+			   {"--------------------------------------------", "---------------------------", "---------------------", "-----------------------"}],
+	Count = length(DataList),
+
+	{ehtml, {'div', [], [
+		{p, [], "Rows count: " ++ integer_to_list(Count)},
+		{p, [], "-------------------------------------------------------------------------------------------"},
+		{p, [], ehtml_server:list_to_table(Headers ++ DataList)}
+	]}}.
+	
+</erl>
+</p>
+
+
+<p><a href="./data_input.yaws">Input data</a></p>
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
+
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

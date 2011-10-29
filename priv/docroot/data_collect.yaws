@@ -1,0 +1,79 @@
+<erl>
+	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data collect"}]}.
+</erl>
+
+<div><h1>Input filter:</h1></div>
+
+<p>
+<erl>
+
+out(_A) ->
+
+{ehtml, {form, [{action, "data_collect_output.yaws"}, {method, "post"}],
+	{table, [], [
+		{tr, [], [
+			{td, [], "SecurityName:"},
+			{td, [], {input, [{name, security}, {type, text}, {value, "ECHO"}]}}
+		]},
+		{tr, [], [
+			{td, [], "Scale:"},
+			{td, [], {select, [{name, scale}],[
+				{option, [{value, "hour"}], "Hour"},
+				{option, [{value, "minute"}], "Minute"},
+				{option, [{value, "day"}], "Day"},
+				{option, [{value, "week"}], "Week"},
+				{option, [{value, "month"}], "Month"},
+				{option, [{value, "year"}], "Year"}
+			]}}
+		]},
+		{tr, [], [
+			{td, [], "DateBegin:"},
+			{td, [], ehtml_server:date_input_template({
+							{day_begin,   "11"},
+							{month_begin, "4"},
+							{year_begin,  "2012"}})}
+		]},
+		{tr, [], [
+			{td, [], "TimeBegin:"},	
+			{td, [], ehtml_server:time_input_template({
+								{hour_begin,   "0"},
+				  				{minute_begin, "0"},
+				  				{second_begin, "0"}})}
+		]},
+		{tr, [], [
+			{td, [], "DateEnd:"},
+			{td, [], ehtml_server:date_input_template({
+							{day_end,   "12"},
+							{month_end, "4"},
+							{year_end,  "2012"}})}
+		]},
+		{tr, [], [
+			{td, [], "TimeEnd:"},
+			{td, [], ehtml_server:time_input_template({
+								{hour_end,   "0"},
+				  				{minute_end, "0"},
+				  				{second_end, "0"}})}
+		]},
+
+		{tr, [], [
+		    {td, [], ""},
+			{td, [], {input, [{type, submit}]}}
+		]}
+	]}
+}}.
+
+</erl>
+</p>
+
+
+
+<p><a href="./data_input.yaws">Input data</a></p>
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
+
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

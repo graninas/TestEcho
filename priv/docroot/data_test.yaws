@@ -1,0 +1,75 @@
+
+<erl>
+	out(_A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data testing"}]}.
+</erl>
+
+<h1>Test procedures:</h1></div>
+
+<erl>
+
+out(_A) ->
+	{PrevDataDict, DataDict} = security_server:load_test_data(),
+
+	{_, _, Scale} = TestFilter = test_data:test_filter(),
+
+	TestResultDataList = test_data:test_result_data_list(),
+	ServerDataFiltered = data_collection:filter_data(DataDict, TestFilter),
+	ModuleDataCollected = data_collection:collect(Scale, dict:to_list(ServerDataFiltered)),
+	ServerDataCollected = security_server:report(TestFilter),
+
+	security_server:set_data(PrevDataDict),
+
+	TestCases = [
+		{"Test case", "Expected", "Actual", "Result"},
+
+		{"Data loading on server...",
+		 i(dict:size(test_data:test_data_dict())),
+		 i(dict:size(DataDict)),
+		 f(dict:size(test_data:test_data_dict()) == dict:size(DataDict))
+		},
+		{"Collecting through server...",
+		 i(erlang:length(TestResultDataList)),
+		 i(erlang:length(ServerDataCollected)),
+		 f(TestResultDataList == ServerDataCollected)
+		},
+		{"Collecting through module...",
+		 i(erlang:length(TestResultDataList)),
+		 i(erlang:length(ModuleDataCollected)),
+		 f(TestResultDataList == ModuleDataCollected)
+		}],
+	TestCasesBorders = [{"--------------------------------------------------", "-----------", "-----------", "-----------"}],
+
+	ResultListHeaders = [{"DateTime", "Open Price", "ClosePrice", "MinPrice", "MaxPrice", "TotalAmount"}],
+	ResultListBorders = [{"------------------", "-----------------", "-----------------", "------------------", "-----------------", "-----------------"}],
+
+	DataListHeaders = [{"DateTime", "SecurityName", "Price", "Amount"}],
+	DataListBorders = [{"---------------------------------------", "-----------------", "-----------------", "-----------------"}],
+
+	{ehtml, {p, [], [ehtml_server:list_to_table(TestCases
+										++ TestCasesBorders
+										++ ResultListHeaders
+										++ ResultListBorders
+										++ ServerDataCollected
+										++ ResultListBorders),
+					 ehtml_server:list_to_table(DataListHeaders
+										++ DataListBorders
+										++ dict:to_list(DataDict))]}}.
+
+
+f(true) -> "Success.";
+f(_) -> "Fail.".
+
+i(Num) -> integer_to_list(Num).
+
+</erl>
+
+<p><a href="./data_input.yaws">Input data</a></p>
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
+
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

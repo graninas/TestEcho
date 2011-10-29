@@ -1,0 +1,67 @@
+
+{ehtml, {form, [{action, "data_process.yaws"}, {method, "post"}], 
+
+{table, [], [
+
+	{tr, [], [
+		{td, [], "Security name:"},
+		{td, [], {input, [{name, security}, {type, text}, {value, "ECHO"}]}}
+	]},
+	{tr, [], [
+		{td, [], "Price:"},
+		{td, [], {input, [{name, price}, {type, text}, {value, "1.22"}]}}
+	]},
+	{tr, [], [
+		{td, [], "Amount:"},
+		{td, [], {input, [{name, amount}, {type, text}, {value, 3500}]}}
+	]},
+	{tr, [], [
+		{td, [], [
+				{input, [{name, datetime_method}, {type, radio}, {checked, "checked"}, {value, "local_datetime"}], "Local Datetime"}
+		]}
+	]},
+	{tr, [], [
+		{td, [], [
+				{input, [{name, datetime_method}, {type, radio}, {value, "manual_datetime"}], "Manual Datetime"}
+		]}
+	]},
+	{tr, [], [
+		{td, [], "Date (dd/mm/yyyy):"},
+		{td, [], [
+					{input, [{name, transaction_day},  {type, text}, {maxlength, "2"}, {size, "2"}, {value, "10"}]},
+					{select, [{name, transaction_month}], [
+							{option, [{value, "1"}], "January"},
+							{option, [{value, "2"}], "Febuary"},
+							{option, [{value, "3"}], "March"},
+							{option, [{value, "4"}], "April"},
+							{option, [{value, "5"}], "May"},
+							{option, [{value, "6"}], "June"},
+							{option, [{value, "7"}], "July"},
+							{option, [{value, "8"}], "August"},
+							{option, [{value, "9"}], "September"},
+							{option, [{value, "10"}], "October"},
+							{option, [{value, "11"}], "November"},
+							{option, [{value, "12"}], "December"}
+						]},
+					{input, [{name, transaction_year}, {type, text}, {value, "2012"}, {maxlength, "4"}, {size, "4"}]}
+				 ]}
+	]},
+	{tr, [], [
+		{td, [], "Time (hh:mm:ss):"},
+		{td, [], [
+					{input, [{name, transaction_hour},   {type, text}, {maxlength, "2"}, {size, "2"}, {value, "10"}]},
+					{input, [{name, transaction_minute}, {type, text}, {maxlength, "2"}, {size, "2"}, {value, "10"}]},
+					{input, [{name, transaction_second}, {type, text}, {maxlength, "2"}, {size, "2"}, {value, "10"}]}
+				]}
+	]},
+	{tr, [], [
+	    {td, [], ""},
+		{td, [], {input, [{type, submit}]}}
+	]},
+	{tr, [], [
+		{td, [], ""},
+		{td, [], ""}
+	]}
+]}
+
+}}
