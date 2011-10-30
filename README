@@ -4,17 +4,27 @@ graninas@gmail.com
 License: GPL
 -----------------------------------------
 
+Installation and Running (on Linux)
+1. Edit ./src/test_echo.app.src, set theese env variables:
+ - docroot - where test_echo .yaws files can be found (default - "../priv/docroot", i.e. TestEcho/priv/docroot seen from TestEcho/ebin);
+ - host - web-server IP (default - {0,0,0,0}, i.e. localhost);
+ - port - free port for web server (default 8081);
+ - server_name - unique YAWS embedded web-server name (default - "test_echo").
+2. Run ./compile.
+3. Run ./run.
+4. In Erl shell start application:
+application:start(test_echo).
+5. If all {ok}, the site will be available at host:port page.
 
+By default, ./run script searches the YAWS beams in /usr/local/lib/yaws and /usr/lib/yaws. If you have different YAWS settings, edit paths in file ./ebin/st.
 
+Alternatively, test_echo application can be started from ./ebin directory:
 
+cd ./ebin
+erl -pa <path/to/yaws/beams>
+erl> test_echo_sup:start().  % more correct: application:start(test_echo).
 
-
-
-
-
-
-
-
+Yaws started in embedded mode.
 
 3rd party modules:
 - mochnum.erl

@@ -4321,3 +4321,13 @@ stop_ready([], <0.103.0>)
 
 =ERROR REPORT==== 30-Oct-2011::17:04:35 ===
 ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::19:04:36 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::19:04:41 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::19:04:46 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::19:06:16 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::19:06:22 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
