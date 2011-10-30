@@ -13,21 +13,21 @@ out(A) ->
 			end,
 
 
-{ehtml, {form, [{action, "data_process.yaws"}, {method, "post"}],
+{ehtml, {form, [{action, "data_process.yaws"}, {method, post}],
 
 {table, [], [
 
 	{tr, [], [
 		{td, [], "Security name:"},
-		{td, [], {input, [{name, security}, {type, text}, {value, "ECHO"}]}}
+		{td, [], {input, [{name, security}, {type, text}, {placeholder, "ECHO"}, required]}}
 	]},
 	{tr, [], [
 		{td, [], "Price:"},
-		{td, [], {input, [{name, price}, {type, text}, {value, "1.22"}]}}
+		{td, [], {input, [{name, price}, {type, text}, {placeholder, "1.22"}, required]}}
 	]},
 	{tr, [], [
 		{td, [], "Amount:"},
-		{td, [], {input, [{name, amount}, {type, text}, {value, 3500}]}}
+		{td, [], {input, [{name, amount}, {type, text}, {placeholder, 3500}, required]}}
 	]},
 	{tr, [], [
 		{td, [], [
@@ -42,16 +42,18 @@ out(A) ->
 	{tr, [], [
 		{td, [], "Date (dd/mm/yyyy):"},
 		{td, [], ehtml_server:date_input_template({
-							{transaction_day, "10"},
-							{transaction_month, "1"},
-							{transaction_year, "2012"}})}
+							{transaction_year,  "2012", false},
+							{transaction_month, "1",    false},
+							{transaction_day,   "10",   false}
+							})}
 	]},
 	{tr, [], [
 		{td, [], "Time (hh:mm:ss):"},
 		{td, [], ehtml_server:time_input_template({
-							{transaction_hour, "10"},
-				  			{transaction_minute, "10"},
-				  			{transaction_second, "10"}})}
+							{transaction_hour,   "10", false},
+				  			{transaction_minute, "55", false},
+				  			{transaction_second, "55", false}
+							})}
 	]},
 	{tr, [], [
 	    {td, [], "Merge hardcoded test data"},
@@ -73,10 +75,10 @@ out(A) ->
 
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_manipulate.yaws">Load test data and etc.</a></p>
 <p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
 <p><a href="./index.yaws">Home page</a></p>
-
 
 <erl>
 out(A) -> {ssi,"END.inc",[],[]}.

@@ -1,24 +1,17 @@
 %%%-------------------------------------------------------------------
-%%% File    : security_server.erl
+%%% File    : query_process_server.erl
 %%% Author  : Granin Alexandr <graninas@gmail.com>
-%%% Description : The security transacions server.
-%%% Template taken from http://spawnlink.com/otp-intro-1-gen_server-skeleton/
-%%% Template author: Mitchell Hashimoto
+%%% Description : The POST/GET process server.
 %%%-------------------------------------------------------------------
 
--module(security_server).
+-module(query_process_server).
 -behaviour(gen_server).
 
 -export([start/0]).
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
 		terminate/2, code_change/3]).
 
--export([data/0, set_data/1, clear_data/0, filter_data/1]).
--export([add_transaction/1, report/1]).
--export([load_test_data/0, merge_test_data/0]).
-
--import(data_collection, [fetch_data/2, filter_data/2, collect/2, test/0]).
--import(test_data, [test_data_dict/0]).
+-export([datetime_extract/1]).
 
 -define(SERVER, ?MODULE).
 
@@ -33,48 +26,8 @@ start() ->
 %% Server data manipulation API.
 %%====================================================================
 
-%%--------------------------------------------------------------------
-%% Function: add_transaction(Transaction) -> {noreply, State}
-%% Description: Adds new transaction into the data Dict.
-%%
-%% Transaction = {DateTime, {SecurityName, Price, Amount}}
-%%--------------------------------------------------------------------
-add_transaction(Transaction) ->
-	gen_server:call(?SERVER, {add_transaction, Transaction}).
-
-%%--------------------------------------------------------------------
-%% Function: report(Filter) -> {reply, ResultList, State} |
-%%                             {reply, ok, State}
-%% Description: Extracts data from data Dict according to Filter and report format.
-%%
-%% Filter = {SecurityName, {DateTimeBegin, DateTimeEnd}, Scale}
-%% ResultList = [{StartDateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}]
-%% Scale = minute | hour | day | week | month | year
-%%--------------------------------------------------------------------
-report(Filter) ->
-	gen_server:call(?SERVER, {report_data, Filter}).
-
-%%--------------------------------------------------------------------
-%% Function: data() -> {reply, ResultDict, State}
-%% Description: Returns data Dict.
-%%--------------------------------------------------------------------
-data() ->
-	gen_server:call(?SERVER, get_data).
-
-load_test_data() ->
-	gen_server:call(?SERVER, load_test_data).
-
-merge_test_data() ->
-	gen_server:call(?SERVER, merge_test_data).
-
-set_data(NewDict) ->
-	gen_server:cast(?SERVER, {set_data, NewDict}).
-
-clear_data() ->
-	gen_server:cast(?SERVER, clear_data).
-
-filter_data(Filter) ->
-	gen_server:call(?SERVER, {filter_data, Filter}).
+datetime_extract(Options) ->
+	gen_server:call(?SERVER, {datetime_extract, Options}).
 
 %%====================================================================
 %% gen_server callbacks
@@ -85,10 +38,10 @@ filter_data(Filter) ->
 %%                         {ok, State, Timeout} |
 %%                         ignore               |
 %%                         {stop, Reason}
-%% Description: Initiates the server, returns empty Dict.
+%% Description: Initiates the server, returns basic ehtml.
 %%--------------------------------------------------------------------
 init(_Args) ->
-	{ok, dict:new()}.
+	{ok, {ehtml, {p, [], "Query process server ok."}}}.
 
 %%--------------------------------------------------------------------
 %% Function: %% handle_call(Request, From, State) ->
@@ -100,36 +53,10 @@ init(_Args) ->
 %%                                      {stop, Reason, State}
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
-%% Called for data extracting.
-handle_call({report_data, Filter}, _, State) ->
-	ResultList = data_collection:fetch_data(State, Filter),
-	{reply, ResultList, State};
 
-%% Called for data returning.
-handle_call(get_data, _, State) ->
-	{reply, State, State};
+handle_call({datetime_extract, Options}, _From, State) ->
+	{reply, extract_data(datetime, Options), State};
 
-%% Called for adding transaction.
-handle_call({add_transaction, Transaction}, _, State) ->
-	{DateTime, SecData} = Transaction,
-	NewState = dict:store(DateTime, SecData, State),
-	{reply, NewState, NewState};
-
-handle_call(load_test_data, _, OldDict) ->
-	TestDict = test_data:test_data_dict(),
-	{reply, {OldDict, TestDict}, TestDict};
-
-handle_call(merge_test_data, _, OldDict) ->
-	TestDict = test_data:test_data_dict(),
-	MergeF = fun(_, Val1, _) -> Val1 end,
-	NewDict = dict:merge(MergeF, TestDict, OldDict),
-	{reply, NewDict, NewDict};
-
-handle_call({filter_data, Filter}, _, Dict) ->
-	NewDict = data_collection:filter_data(Dict, Filter),
-	{reply, NewDict, Dict};
-
-%% Called for unregistered cases.
 handle_call(_Request, _From, State) ->
 	{reply, ok, State}.
 
@@ -139,12 +66,6 @@ handle_call(_Request, _From, State) ->
 %%                                      {stop, Reason, State}
 %% Description: Handling cast messages
 %%--------------------------------------------------------------------
-
-handle_cast({set_data, NewDict}, _) ->
-	{noreply, NewDict};
-
-handle_cast(clear_data, _) ->
-	{noreply, dict:new()};
 
 %% Casted for unregistered cases.
 handle_cast(_Msg, State) ->
@@ -176,5 +97,29 @@ terminate(_Reason, _State) ->
 code_change(_OldVsn, State, _Extra) ->
   {ok, State}.
 
+%%====================================================================
+%% Internal functions.
+%%====================================================================
 
+extract_data(datetime, {A, QueryMethod, {YearVar, MonthVar, DayVar, HourVar, MinuteVar, SecondVar}}) ->
 
+	GetVarF = 
+		case QueryMethod of
+			post -> fun(Arg, Var) -> yaws_api:postvar(Arg, Var) end;
+			_    -> fun(Arg, Var) -> yaws_api:getvar (Arg, Var) end
+		end,
+
+	{ok, SDay}    = GetVarF(A, DayVar),
+	{ok, SMonth}  = GetVarF(A, MonthVar),
+	{ok, SYear}   = GetVarF(A, YearVar),
+	{ok, SHour}   = GetVarF(A, HourVar),
+	{ok, SMinute} = GetVarF(A, MinuteVar),
+	{ok, SSecond} = GetVarF(A, SecondVar),
+	Y  = list_to_integer(SYear),
+	M  = list_to_integer(SMonth),
+	D  = list_to_integer(SDay),
+	H  = list_to_integer(SHour),
+	MM = list_to_integer(SMinute),
+	S  = list_to_integer(SSecond),
+
+	{{{Y,M,D}, {H,MM,S}}, {{SYear, SMonth, SDay}, {SHour, SMinute, SSecond}}}.

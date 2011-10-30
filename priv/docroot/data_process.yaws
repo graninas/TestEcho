@@ -28,20 +28,8 @@ out(A) ->
 						   		{i(IHour), i(IMinute), i(ISecond)}
 						  }
 					};
-				_ ->
-					{ok, SDay} = postvar(A, "transaction_day"),
-					{ok, SMonth} = postvar(A, "transaction_month"),
-					{ok, SYear} = postvar(A, "transaction_year"),
-					{ok, SHour} = postvar(A, "transaction_hour"),
-					{ok, SMinute} = postvar(A, "transaction_minute"),
-					{ok, SSecond} = postvar(A, "transaction_second"),
-					Y  = list_to_integer(SYear),
-					M  = list_to_integer(SMonth),
-					D  = list_to_integer(SDay),
-					H  = list_to_integer(SHour),
-					MM = list_to_integer(SMinute),
-					S  = list_to_integer(SSecond),
-					{{{Y,M,D}, {H,MM,S}}, {{SYear, SMonth, SDay}, {SHour, SMinute, SSecond}}}
+				_ -> query_process_server:datetime_extract({A, post, {"transaction_year", "transaction_month",  "transaction_day",
+																	  "transaction_hour", "transaction_minute", "transaction_second"}})
 				end,
 
 	{ok, Price}  = postvar(A, "price"),
@@ -83,10 +71,10 @@ m(_) -> "".
 
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_manipulate.yaws">Load test data and etc.</a></p>
 <p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
 <p><a href="./index.yaws">Home page</a></p>
-
 
 <erl>
 out(A) -> {ssi,"END.inc",[],[]}.

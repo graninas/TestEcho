@@ -122,11 +122,13 @@ code_change(_OldVsn, State, _Extra) ->
 %% Internal functions.
 %%====================================================================
 
-make_date_input_template({{DayInputName, DayDefVal},
-						  {MonthInputName, _MonthDefVal},
-						  {YearInputName, YearDefVal}}) ->
-	[{input, [{name, DayInputName},  {type, text}, {maxlength, "2"}, {size, "2"}, {value, DayDefVal}]},
-	 {select, [{name, MonthInputName}], [
+make_date_input_template({
+						  {YearInputName, YearDefVal, IsYRequired},
+						  {MonthInputName, _MonthDefVal, IsMRequired},
+						  {DayInputName, DayDefVal, IsDRequired}
+						}) ->
+	[{input, req(IsDRequired) ++ [{name, DayInputName},  {type, text}, {maxlength, "2"}, {max, "31"}, {min, "1"}, {size, "2"}, {placeholder, DayDefVal}]},
+	 {select,  req(IsMRequired) ++ [{name, MonthInputName}], [
 			{option, [{value, "1"}], "January"},
 			{option, [{value, "2"}], "Febuary"},
 			{option, [{value, "3"}], "March"},
@@ -140,14 +142,14 @@ make_date_input_template({{DayInputName, DayDefVal},
 			{option, [{value, "11"}], "November"},
 			{option, [{value, "12"}], "December"}
 		]},
-	 {input, [{name, YearInputName}, {type, text}, {value, YearDefVal}, {maxlength, "4"}, {size, "4"}]}].
+	 {input,  req(IsYRequired) ++ [{name, YearInputName}, {type, text}, {placeholder, YearDefVal}, {max, "2100"}, {min, "1800"}, {maxlength, "4"}, {size, "4"}]}].
 
-make_time_input_template({{HourInputName, HourDefVal},
-                          {MinuteInputName, MinuteDefVal},
-                          {SecondInputName, SecondDefVal}}) ->
-	[{input, [{name, HourInputName  }, {type, text}, {maxlength, "2"}, {size, "2"}, {value, HourDefVal   }]},
-	 {input, [{name, MinuteInputName}, {type, text}, {maxlength, "2"}, {size, "2"}, {value, MinuteDefVal }]},
-	 {input, [{name, SecondInputName}, {type, text}, {maxlength, "2"}, {size, "2"}, {value, SecondDefVal }]}].
+make_time_input_template({{HourInputName, HourDefVal, IsHRequired},
+                          {MinuteInputName, MinuteDefVal, IsMRequired},
+                          {SecondInputName, SecondDefVal, IsSRequired}}) ->
+	[{input,  req(IsHRequired) ++ [{name, HourInputName  }, {type, text}, {maxlength, "2"}, {size, "2"}, {max, 23}, {min, "0"}, {placeholder, HourDefVal   }]},
+	 {input,  req(IsMRequired) ++ [{name, MinuteInputName}, {type, text}, {maxlength, "2"}, {size, "2"}, {max, 59}, {min, "0"}, {placeholder, MinuteDefVal }]},
+	 {input,  req(IsSRequired) ++ [{name, SecondInputName}, {type, text}, {maxlength, "2"}, {size, "2"}, {max, 59}, {min, "0"}, {placeholder, SecondDefVal }]}].
 
 make_table_rows([DataItem | []]) ->
 	[make_table_row(DataItem)];
@@ -208,5 +210,7 @@ datetime_to_string({{Year, Month, Day},{Hour, Minute, Second}}) ->
 	++ ":" ++ integer_to_list(Minute)
 	++ ":" ++ integer_to_list(Second).
 
-	
+req(true) -> [required];
+req(required) -> [required];
+req(_) -> [].
 

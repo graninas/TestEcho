@@ -23,6 +23,7 @@ init([]) ->
     TestEcho = {test_echo, {test_echo, start, []}, permanent,2000,worker,[test_echo]},
 	SecurityServer = {security_server, {security_server, start, []}, permanent,2000,worker,[security_server]},
 	EhtmlServer = {ehtml_server, {ehtml_server, start, []}, permanent,2000,worker,[ehtml_server]},
+	QueryProcessServer = {query_process_server, {query_process_server, start, []}, permanent,2000,worker,[query_process_server]},
 
-    {ok,{{one_for_one,0,1}, [TestEcho, SecurityServer, EhtmlServer]}}.
+    {ok,{{one_for_one,0,1}, [TestEcho, SecurityServer, EhtmlServer, QueryProcessServer]}}.
 

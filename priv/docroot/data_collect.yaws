@@ -9,15 +9,15 @@
 
 out(_A) ->
 
-{ehtml, {form, [{action, "data_collect_output.yaws"}, {method, "post"}],
+{ehtml, {form, [{action, "data_collect_output.yaws"}, {method, post}],
 	{table, [], [
 		{tr, [], [
 			{td, [], "SecurityName:"},
-			{td, [], {input, [{name, security}, {type, text}, {value, "ECHO"}]}}
+			{td, [], {input, [{name, security}, required, {type, text}, {placeholder, "ECHO"}]}}
 		]},
 		{tr, [], [
 			{td, [], "Scale:"},
-			{td, [], {select, [{name, scale}],[
+			{td, [], {select, [{name, scale}, required],[
 				{option, [{value, "hour"}], "Hour"},
 				{option, [{value, "minute"}], "Minute"},
 				{option, [{value, "day"}], "Day"},
@@ -29,30 +29,34 @@ out(_A) ->
 		{tr, [], [
 			{td, [], "DateBegin:"},
 			{td, [], ehtml_server:date_input_template({
-							{day_begin,   "11"},
-							{month_begin, "4"},
-							{year_begin,  "2012"}})}
+							{year_begin,  "2012", required},
+							{month_begin, "4",    required},
+							{day_begin,   "11",   required}
+							})}
 		]},
 		{tr, [], [
 			{td, [], "TimeBegin:"},	
 			{td, [], ehtml_server:time_input_template({
-								{hour_begin,   "0"},
-				  				{minute_begin, "0"},
-				  				{second_begin, "0"}})}
+								{hour_begin,   "0", required},
+				  				{minute_begin, "0", required},
+				  				{second_begin, "0", required}
+								})}
 		]},
 		{tr, [], [
 			{td, [], "DateEnd:"},
 			{td, [], ehtml_server:date_input_template({
-							{day_end,   "12"},
-							{month_end, "4"},
-							{year_end,  "2012"}})}
+							{year_end,  "2012", required},
+							{month_end, "4",    required},
+							{day_end,   "12",   required}
+							})}
 		]},
 		{tr, [], [
 			{td, [], "TimeEnd:"},
 			{td, [], ehtml_server:time_input_template({
-								{hour_end,   "0"},
-				  				{minute_end, "0"},
-				  				{second_end, "0"}})}
+								{hour_end,   "0", required},
+				  				{minute_end, "0", required},
+				  				{second_end, "0", required}
+								})}
 		]},
 
 		{tr, [], [
@@ -66,12 +70,13 @@ out(_A) ->
 </p>
 
 
-
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_manipulate.yaws">Load test data and etc.</a></p>
 <p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
 <p><a href="./index.yaws">Home page</a></p>
+
 
 
 <erl>

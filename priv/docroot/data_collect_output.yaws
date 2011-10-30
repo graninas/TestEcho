@@ -2,27 +2,62 @@
 	out(A) -> {ssi, "HEAD.inc","%%",[{"Pl", " - Data collect output"}]}.
 </erl>
 
-<div><h1>Filtered and collected data:</h1></div>
+<h1>Filtering and collecting results:</h1>
 
-<p>
 <erl>
 
 out(A) ->
 
+	{DateTimeBegin, _} = query_process_server:datetime_extract({A, post, {"year_begin", "month_begin", "day_begin",
+																		   "hour_begin", "minute_begin", "second_begin"}}),
+	{DateTimeEnd, _}   = query_process_server:datetime_extract({A, post, {"year_end", "month_end", "day_end",
+																	  	   "hour_end", "minute_end", "second_end"}}),
 	
+	{ok, Scale}        = postvar(A, "scale"),
+	{ok, SecurityName} = postvar(A, "security"),
 
-	{ehtml, {p, [], []}}.
+	Filter = {list_to_atom(SecurityName), {DateTimeBegin, DateTimeEnd}, list_to_atom(Scale)},
+	SortF = fun({Date1, _A}, {Date2, _B}) -> Date1 < Date2 end,
+
+	FilteredDataList = dict:to_list(security_server:filter_data(Filter)),
+    SortedFilteredDataList = lists:sort(SortF, FilteredDataList),
+	CollectedDataList = security_server:report(Filter),
+
+	{{YearB, MonthB, DayB}, {HourB, MinuteB, SecondB}} = DateTimeBegin,
+	{{YearE, MonthE, DayE}, {HourE, MinuteE, SecondE}} = DateTimeEnd,
+
+	{ehtml, {p, [], [
+		{p, [], "Security name: " ++ SecurityName},
+		{p, [], "Scale: " ++ Scale},
+		{p, [], "DateTimeBegin: ("
+				++ i(DayB) ++ "/" ++ i(MonthB) ++ "/" ++ i(YearB) ++ " "
+				++ i(HourB) ++ ":" ++ i(MinuteB) ++ ":" ++ i(SecondB) ++ ")"},
+		{p, [], "DateTimeEnd: ("
+				++ i(DayE) ++ "/" ++ i(MonthE) ++ "/" ++ i(YearE) ++ " "
+				++ i(HourE) ++ ":" ++ i(MinuteE) ++ ":" ++ i(SecondE) ++ ")"},
+		{p, [], "Filtered: " ++ integer_to_list(erlang:length(FilteredDataList))},
+		{p, [], "Sorted:" ++ integer_to_list(erlang:length(SortedFilteredDataList))},
+		{p, [], "Collected: " ++ integer_to_list(erlang:length(CollectedDataList))},
+		{p, [], "Result - collected data:"},
+		ehtml_server:list_to_table(CollectedDataList),
+		{p, [], "=========================================================================================="},
+		{p, [], "Debug output: intermediate filtered and sorted data:"},
+		ehtml_server:list_to_table(SortedFilteredDataList)
+	]}}.
+
+i(Num) -> integer_to_list(Num).
 
 </erl>
-</p>
 
 
 
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_manipulate.yaws">Load test data and etc.</a></p>
 <p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
 <p><a href="./index.yaws">Home page</a></p>
+
 
 
 <erl>

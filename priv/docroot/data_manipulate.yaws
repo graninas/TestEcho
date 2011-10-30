@@ -1,0 +1,57 @@
+<erl>
+	out(_A) -> {ssi, "HEAD.inc","%%",[{"Pl", "- Test data loading"}]}.
+</erl>
+
+<erl>
+
+out(A) ->
+	Message = case postvar(A, "action") of
+		{ok, "load_test_data_only"} -> 
+			{_OldData, _NewData} = security_server:load_test_data(),
+			{p, [], "Test data loading success."};
+
+		{ok, "merge_test_data"} ->
+			security_server:merge_test_data(),
+			{p, [], "Test data merging success."};
+
+		{ok, "clear_data"} ->
+			security_server:clear_data(),
+			{p, [], "Clearing data success."};
+
+		_ ->
+			{p, [], ""}
+	end,
+
+	{ehtml,
+			{p, [], [
+				{h1, [], "Select variant of data manipulation:"},
+				{form, [{action, "data_manipulate.yaws"}, {method, post}], [
+					{p, [],
+						{input, [{type, radio}, {name, action}, {checked, "checked"}, {value, "load_test_data_only"}], "Clear current data, load test data"}
+					},
+					{p, [],
+						{input, [{type, radio}, {name, action}, {value, "merge_test_data"}], "Merge test data into current data (test data priority)"}
+					},
+					{p, [], {input, [{type, radio}, {name, action}, {value, "clear_data"}], "Clear current data"}
+					},
+					{p, [],
+						{input, [{type, submit}]}
+					}
+				]},
+				Message
+			]}
+	}.
+
+</erl>
+
+
+<p><a href="./data_input.yaws">Input data</a></p>
+<p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_manipulate.yaws">Load test data and etc.</a></p>
+<p><a href="./data_collect.yaws">Filter and collect data</a></p>
+<p><a href="./data_test.yaws">Security server tests</a></p>
+<p><a href="./index.yaws">Home page</a></p>
+
+<erl>
+out(A) -> {ssi,"END.inc",[],[]}.
+</erl>

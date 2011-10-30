@@ -2681,3 +2681,1643 @@ generated file at: /home/gas/.yaws/yaws/embedded/m46.erl
 Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/data_collect.yaws:81:
  syntax error before: ']'
 generated file at: /home/gas/.yaws/yaws/embedded/m49.erl
+
+=ERROR REPORT==== 29-Oct-2011::17:36:14 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2270>,
+                          {{127,0,0,1},53479},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"}]},
+                          {http_request,'GET',
+                           {abs_path,
+                            "/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                           {1,1}},
+                          undefined,"/data_collect_output.yaws",
+                          "security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end=",
+                          undefined,"/home/gas/Erlang/TestEcho/priv/docroot",
+                          "/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.73.0>,[],undefined,"/",
+                          undefined},
+                         get,
+                         {"transaction_year","transaction_month",
+                          "transaction_day","transaction_hour",
+                          "transaction_minute","transaction_second"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{case_clause,get},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::17:36:14 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{case_clause,get},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2270>,
+                       {{127,0,0,1},53479},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"}]},
+                       {http_request,'GET',
+                           {abs_path,
+                               "/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                           {1,1}},
+                       undefined,"/data_collect_output.yaws",
+                       "security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end=",
+                       undefined,"/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.73.0>,[],undefined,"/",
+                       undefined},
+                   get,
+                   {"transaction_year","transaction_month","transaction_day",
+                    "transaction_hour","transaction_minute",
+                    "transaction_second"}}}]}}
+Req: {http_request,'GET',
+                   {abs_path,"/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                   {1,1}}
+Stack: [{gen_server,call,2},
+        {m11,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::17:36:14 ===
+stop_ready([], <0.92.0>)
+
+=ERROR REPORT==== 29-Oct-2011::17:38:19 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.761>,
+                          {{127,0,0,1},53481},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"}]},
+                          {http_request,'GET',
+                           {abs_path,
+                            "/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                           {1,1}},
+                          undefined,"/data_collect_output.yaws",
+                          "security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end=",
+                          undefined,"/home/gas/Erlang/TestEcho/priv/docroot",
+                          "/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.52.0>,[],undefined,"/",
+                          undefined},
+                         get,
+                         {"transaction_year","transaction_month",
+                          "transaction_day","transaction_hour",
+                          "transaction_minute","transaction_second"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=INFO REPORT==== 29-Oct-2011::17:38:19 ===
+stop_ready([], <0.56.0>)
+
+=ERROR REPORT==== 29-Oct-2011::17:38:19 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.761>,
+                       {{127,0,0,1},53481},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"}]},
+                       {http_request,'GET',
+                           {abs_path,
+                               "/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                           {1,1}},
+                       undefined,"/data_collect_output.yaws",
+                       "security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end=",
+                       undefined,"/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.52.0>,[],undefined,"/",
+                       undefined},
+                   get,
+                   {"transaction_year","transaction_month","transaction_day",
+                    "transaction_hour","transaction_minute",
+                    "transaction_second"}}}]}}
+Req: {http_request,'GET',
+                   {abs_path,"/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                   {1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 29-Oct-2011::17:39:31 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws"
+=ERROR REPORT==== 29-Oct-2011::17:39:31 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2276>,
+                          {{127,0,0,1},53483},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"}]},
+                          {http_request,'GET',
+                           {abs_path,
+                            "/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                           {1,1}},
+                          undefined,"/data_collect_output.yaws",
+                          "security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end=",
+                          undefined,"/home/gas/Erlang/TestEcho/priv/docroot",
+                          "/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.90.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"transaction_year","transaction_month",
+                          "transaction_day","transaction_hour",
+                          "transaction_minute","transaction_second"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=INFO REPORT==== 29-Oct-2011::17:39:31 ===
+stop_ready([], <0.94.0>)
+
+=ERROR REPORT==== 29-Oct-2011::17:39:31 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2276>,
+                       {{127,0,0,1},53483},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"}]},
+                       {http_request,'GET',
+                           {abs_path,
+                               "/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                           {1,1}},
+                       undefined,"/data_collect_output.yaws",
+                       "security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end=",
+                       undefined,"/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.90.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"transaction_year","transaction_month","transaction_day",
+                    "transaction_hour","transaction_minute",
+                    "transaction_second"}}}]}}
+Req: {http_request,'GET',
+                   {abs_path,"/data_collect_output.yaws?security=ECHO&scale=hour&day_begin=&month_begin=1&year_begin=&hour_begin=&minute_begin=&second_begin=&day_end=&month_end=1&year_end=&hour_end=&minute_end=&second_end="},
+                   {1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 29-Oct-2011::17:39:59 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:7
+Reason: {badarg,[{erlang,list_to_integer,[[]]},
+                 {m5,out,1},
+                 {yaws_server,deliver_dyn_part,8},
+                 {yaws_server,aloop,3},
+                 {yaws_server,acceptor0,2},
+                 {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{erlang,list_to_integer,[[]]},
+        {m5,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 29-Oct-2011::17:44:21 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2302>,
+                          {{127,0,0,1},53490},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"182",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"},
+                            {http_header,0,"Origin",undefined,
+                             "http://localhost:8080"}]},
+                          {http_request,'POST',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                          <<"security=ECHO&scale=hour&day_begin=1&month_begin=1&year_begin=2011&hour_begin=1&minute_begin=1&second_begin=1&day_end=2&month_end=1&year_end=2011&hour_end=2&minute_end=2&second_end=2">>,
+                          "/data_collect_output.yaws",undefined,undefined,
+                          "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.54.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"year_begin","month_begin","day_begin","hour_begin",
+                          "minute_begin","second_begin"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::17:44:21 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2302>,
+                       {{127,0,0,1},53490},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"182",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"},
+                            {http_header,0,"Origin",undefined,
+                                "http://localhost:8080"}]},
+                       {http_request,'POST',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                       <<"security=ECHO&scale=hour&day_begin=1&month_begin=1&year_begin=2011&hour_begin=1&minute_begin=1&second_begin=1&day_end=2&month_end=1&year_end=2011&hour_end=2&minute_end=2&second_end=2">>,
+                       "/data_collect_output.yaws",undefined,undefined,
+                       "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.54.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"year_begin","month_begin","day_begin","hour_begin",
+                    "minute_begin","second_begin"}}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m14,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::17:44:21 ===
+stop_ready([], <0.109.0>)
+
+=ERROR REPORT==== 29-Oct-2011::18:26:36 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {undef,[{security_server,report,[]},
+                {m10,out,1},
+                {yaws_server,deliver_dyn_part,8},
+                {yaws_server,aloop,3},
+                {yaws_server,acceptor0,2},
+                {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{security_server,report,[]},
+        {m10,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 29-Oct-2011::18:28:13 ===
+** Generic server security_server terminating 
+** Last message in was {report_data,{"ECHO",
+                                     {{{2010,1,1},{1,1,1}},
+                                      {{2010,1,12},{2,2,2}}},
+                                     "hour"}}
+** When Server state == {dict,0,16,16,8,80,48,
+                              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                               []},
+                              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                                []}}}
+** Reason for termination == 
+** {{badmatch,[]},
+    [{data_collection,collect,2},
+     {security_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::18:28:13 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,[]},
+          [{data_collection,collect,2},
+           {security_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [security_server,
+                      {report_data,{"ECHO",
+                                    {{{2010,1,1},{1,1,1}},
+                                     {{2010,1,12},{2,2,2}}},
+                                    "hour"}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m16,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::18:28:13 ===
+stop_ready([], <0.139.0>)
+
+=ERROR REPORT==== 29-Oct-2011::18:29:44 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws"
+=ERROR REPORT==== 29-Oct-2011::18:29:44 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2366>,
+                          {{127,0,0,1},53523},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"},
+                            {http_header,1,'Cache-Control',undefined,
+                             "max-age=0"}]},
+                          {http_request,'GET',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                          undefined,"/data_collect_output.yaws",undefined,
+                          undefined,"/home/gas/Erlang/TestEcho/priv/docroot",
+                          "/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.173.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"year_begin","month_begin","day_begin","hour_begin",
+                          "minute_begin","second_begin"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::18:29:44 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2366>,
+                       {{127,0,0,1},53523},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"},
+                            {http_header,1,'Cache-Control',undefined,
+                                "max-age=0"}]},
+                       {http_request,'GET',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                       undefined,"/data_collect_output.yaws",undefined,
+                       undefined,"/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.173.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"year_begin","month_begin","day_begin","hour_begin",
+                    "minute_begin","second_begin"}}}]}}
+Req: {http_request,'GET',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::18:29:44 ===
+stop_ready([], <0.177.0>)
+
+=ERROR REPORT==== 29-Oct-2011::18:30:08 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws"
+=ERROR REPORT==== 29-Oct-2011::18:30:08 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2392>,
+                          {{127,0,0,1},53524},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"},
+                            {http_header,1,'Cache-Control',undefined,
+                             "max-age=0"}]},
+                          {http_request,'GET',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                          undefined,"/data_collect_output.yaws",undefined,
+                          undefined,"/home/gas/Erlang/TestEcho/priv/docroot",
+                          "/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.211.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"year_begin","month_begin","day_begin","hour_begin",
+                          "minute_begin","second_begin"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::18:30:08 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2392>,
+                       {{127,0,0,1},53524},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,undefined,
+                           undefined,undefined,undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"},
+                            {http_header,1,'Cache-Control',undefined,
+                                "max-age=0"}]},
+                       {http_request,'GET',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                       undefined,"/data_collect_output.yaws",undefined,
+                       undefined,"/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.211.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"year_begin","month_begin","day_begin","hour_begin",
+                    "minute_begin","second_begin"}}}]}}
+Req: {http_request,'GET',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::18:30:08 ===
+stop_ready([], <0.215.0>)
+
+=ERROR REPORT==== 29-Oct-2011::18:34:05 ===
+** Generic server security_server terminating 
+** Last message in was {report_data,{"ECHO",
+                                     {{{2012,1,11},{0,0,0}},
+                                      {{2012,1,12},{0,0,0}}},
+                                     "hour"}}
+** When Server state == {dict,0,16,16,8,80,48,
+                              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                               []},
+                              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                                []}}}
+** Reason for termination == 
+** {{badmatch,[]},
+    [{data_collection,collect,2},
+     {security_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::18:34:05 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,[]},
+          [{data_collection,collect,2},
+           {security_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+                     [security_server,
+                      {report_data,{"ECHO",
+                                    {{{2012,1,11},{0,0,0}},
+                                     {{2012,1,12},{0,0,0}}},
+                                    "hour"}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m5,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::18:34:05 ===
+stop_ready([], <0.272.0>)
+
+=ERROR REPORT==== 29-Oct-2011::18:34:50 ===
+** Generic server security_server terminating 
+** Last message in was {report_data,
+                           {'ECHO',
+                               {{{2012,1,11},{0,0,0}},{{2012,1,12},{0,0,0}}},
+                               hour}}
+** When Server state == {dict,0,16,16,8,80,48,
+                              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                               []},
+                              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                                []}}}
+** Reason for termination == 
+** {{badmatch,[]},
+    [{data_collection,collect,2},
+     {security_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::18:34:50 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,[]},
+          [{data_collection,collect,2},
+           {security_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [security_server,
+              {report_data,
+                  {'ECHO',
+                      {{{2012,1,11},{0,0,0}},{{2012,1,12},{0,0,0}}},
+                      hour}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::18:34:50 ===
+stop_ready([], <0.310.0>)
+
+=ERROR REPORT==== 29-Oct-2011::18:36:33 ===
+** Generic server security_server terminating 
+** Last message in was {report_data,
+                           {'ECHO',
+                               {{{2012,1,11},{0,0,0}},{{2012,1,12},{0,0,0}}},
+                               hour}}
+** When Server state == {dict,0,16,16,8,80,48,
+                              {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                               []},
+                              {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+                                []}}}
+** Reason for termination == 
+** {{badmatch,[]},
+    [{data_collection,collect,2},
+     {security_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 29-Oct-2011::18:36:33 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{{badmatch,[]},
+          [{data_collection,collect,2},
+           {security_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [security_server,
+              {report_data,
+                  {'ECHO',
+                      {{{2012,1,11},{0,0,0}},{{2012,1,12},{0,0,0}}},
+                      hour}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m5,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 29-Oct-2011::18:36:33 ===
+stop_ready([], <0.361.0>)
+
+=ERROR REPORT==== 30-Oct-2011::12:37:12 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[]},
+         [{m2,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m2,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::12:37:34 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:7
+Reason: {badarg,[{erlang,list_to_integer,[[]]},
+                 {m11,out,1},
+                 {yaws_server,deliver_dyn_part,8},
+                 {yaws_server,aloop,3},
+                 {yaws_server,acceptor0,2},
+                 {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{erlang,list_to_integer,[[]]},
+        {m11,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::12:52:49 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:7
+Reason: {badarg,[{erlang,list_to_integer,[[]]},
+                 {m5,out,1},
+                 {yaws_server,deliver_dyn_part,8},
+                 {yaws_server,aloop,3},
+                 {yaws_server,acceptor0,2},
+                 {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{erlang,list_to_integer,[[]]},
+        {m5,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::12:54:19 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:7
+Reason: {badarg,[{erlang,list_to_integer,[[]]},
+                 {m10,out,1},
+                 {yaws_server,deliver_dyn_part,8},
+                 {yaws_server,aloop,3},
+                 {yaws_server,acceptor0,2},
+                 {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{erlang,list_to_integer,[[]]},
+        {m10,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::12:58:14 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,
+                            [[{required},
+                              {name,day_begin},
+                              {type,text},
+                              {maxlength,"2"},
+                              {max,"31"},
+                              {min,"1"},
+                              {size,"2"},
+                              {placeholder,"11"}]]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1}]}
+ </pre>
+
+=ERROR REPORT==== 30-Oct-2011::13:28:07 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2011,10,30},{13,27,42}},{'ECHO',1.22,3.5e3}}]},
+         [{m14,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m14,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::14:45:43 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:45:58 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:48:01 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws:10:
+ variable 'A' is unbound
+generated file at: /home/gas/.yaws/yaws/embedded/m36.erl
+
+=ERROR REPORT==== 30-Oct-2011::14:48:11 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:50:46 ===
+Dynamic compiler err /home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws:16:
+ syntax error before: '{'
+generated file at: /home/gas/.yaws/yaws/embedded/m42.erl
+
+=ERROR REPORT==== 30-Oct-2011::14:57:27 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:57:27 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,["Select variant to load test data:"]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3}]}
+ </pre>
+
+=ERROR REPORT==== 30-Oct-2011::14:58:06 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:58:06 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,["Select variant to load test data:"]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3}]}
+ </pre>
+
+=ERROR REPORT==== 30-Oct-2011::14:58:07 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:58:07 ===
+<pre> 
+{function_clause,[{yaws_api,ehtml_attrs,["Select variant to load test data:"]},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_api,ehtml_expand,1},
+                  {yaws_server,safe_ehtml_expand,1},
+                  {yaws_server,handle_out_reply,5},
+                  {yaws_server,deliver_dyn_part,8},
+                  {yaws_server,aloop,3}]}
+ </pre>
+
+=ERROR REPORT==== 30-Oct-2011::14:58:27 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:59:24 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:59:41 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:59:53 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::14:59:54 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:02:51 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:04:01 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:04:21 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:07:27 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/test_data_load.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:08:04 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m77,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m77,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:09:20 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m80,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m80,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:09:22 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m80,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m80,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:09:39 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m80,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m80,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:09:40 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m80,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m80,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:09:41 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m80,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m80,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:09:42 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:8
+Reason: {{badmatch,[{{{2012,4,11},{10,31,0}},{'ECHO',1.21,1200}},
+                    {{{2012,4,11},{10,52,0}},{'ECHO',1.22,400}},
+                    {{{2012,4,11},{11,16,0}},{'ECHO',1.24,1300}},
+                    {{{2012,4,11},{11,21,0}},{'ECHO',1.23,1000}},
+                    {{{2012,4,11},{11,48,0}},{'ECHO',1.26,1200}},
+                    {{{2012,4,11},{12,20,0}},{'ECHO',1.25,300}},
+                    {{{2012,4,11},{13,5,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{13,44,0}},{'ECHO',1.23,2000}},
+                    {{{2012,4,11},{14,1,0}},{'ECHO',1.24,1400}},
+                    {{{2012,4,11},{14,13,0}},{'ECHO',1.25,500}},
+                    {{{2012,4,11},{14,22,0}},{'ECHO',1.24,700}},
+                    {{{2012,4,11},{14,37,0}},{'ECHO',1.23,1100}},
+                    {{{2012,4,11},{14,39,0}},{'ECHO',1.22,1500}},
+                    {{{2012,4,11},{15,4,0}},{'ECHO',1.22,200}},
+                    {{{2012,4,11},{16,32,0}},{'ECHO',1.24,400}},
+                    {{{2012,4,12},{22,10,0}},{'ECHO',1.33,544}},
+                    {{{2012,4,12},{23,45,0}},{'ECHO',1.35,1500}},
+                    {{{2012,4,12},{23,49,0}},{'ECHO',1.21,1210}},
+                    {{{2012,5,1},{5,14,0}},{'ECHO',1.19,778}},
+                    {{{2012,5,1},{7,22,0}},{'ECHO',1.16,512}},
+                    {{{2012,5,1},{8,0,0}},{'ECHO',1.28,1445}},
+                    {{{2012,5,1},{8,10,0}},{'ECHO',1.29,2144}}]},
+         [{m80,out,1},
+          {yaws_server,deliver_dyn_part,8},
+          {yaws_server,aloop,3},
+          {yaws_server,acceptor0,2},
+          {proc_lib,init_p_do_apply,3}]}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{m80,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=ERROR REPORT==== 30-Oct-2011::15:33:36 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:35:09 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::15:35:32 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::16:21:30 ===
+<pre> 
+{badarg,[{erlang,atom_to_list,[{2000,1,11}]},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_api,ehtml_expand,1},
+         {yaws_server,safe_ehtml_expand,1},
+         {yaws_server,handle_out_reply,5}]}
+ </pre>
+
+=ERROR REPORT==== 30-Oct-2011::16:26:53 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.3115>,
+                          {{127,0,0,1},33093},
+                          {headers,"keep-alive",
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_input.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1",
+                           undefined,[],undefined,undefined,"193",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,9,'Accept-Charset',undefined,
+                             "windows-1251,utf-8;q=0.7,*;q=0.7"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip, deflate"},
+                            {http_header,11,'Accept-Language',undefined,
+                             "ru,en-us;q=0.5"}]},
+                          {http_request,'POST',
+                           {abs_path,"/data_process.yaws"},
+                           {1,1}},
+                          <<"security=TEST&price=1.55&amount=2000&datetime_method=manual_datetime&transaction_day=15&transaction_month=4&transaction_year=2015&transaction_hour=11&transaction_minute=11&transaction_second=00">>,
+                          "/data_process.yaws",undefined,undefined,
+                          "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws",
+                          undefined,undefined,<0.755.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"transaction_year","transaction_month",
+                          "transaction_day","transaction_hour",
+                          "transaction_minute","transaction_second"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 30-Oct-2011::16:26:53 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:7
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.3115>,
+                       {{127,0,0,1},33093},
+                       {headers,"keep-alive",
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_input.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1",
+                           undefined,[],undefined,undefined,"193",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,9,'Accept-Charset',undefined,
+                                "windows-1251,utf-8;q=0.7,*;q=0.7"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip, deflate"},
+                            {http_header,11,'Accept-Language',undefined,
+                                "ru,en-us;q=0.5"}]},
+                       {http_request,'POST',
+                           {abs_path,"/data_process.yaws"},
+                           {1,1}},
+                       <<"security=TEST&price=1.55&amount=2000&datetime_method=manual_datetime&transaction_day=15&transaction_month=4&transaction_year=2015&transaction_hour=11&transaction_minute=11&transaction_second=00">>,
+                       "/data_process.yaws",undefined,undefined,
+                       "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws",
+                       undefined,undefined,<0.755.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"transaction_year","transaction_month","transaction_day",
+                    "transaction_hour","transaction_minute",
+                    "transaction_second"}}}]}}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m121,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 30-Oct-2011::16:26:53 ===
+stop_ready([], <0.774.0>)
+
+=ERROR REPORT==== 30-Oct-2011::16:34:15 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::16:34:23 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::16:34:51 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.3229>,
+                          {{127,0,0,1},33107},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"184",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"},
+                            {http_header,0,"Origin",undefined,
+                             "http://localhost:8080"}]},
+                          {http_request,'POST',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                          <<"security=ECHO&scale=hour&day_begin=11&month_begin=4&year_begin=2012&hour_begin=0&minute_begin=0&second_begin=0&day_end=12&month_end=4&year_end=2012&hour_end=0&minute_end=0&second_end=0">>,
+                          "/data_collect_output.yaws",undefined,undefined,
+                          "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.885.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"year_begin","month_begin","day_begin","hour_begin",
+                          "minute_begin","second_begin"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 30-Oct-2011::16:34:51 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:7
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.3229>,
+                       {{127,0,0,1},33107},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"184",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"},
+                            {http_header,0,"Origin",undefined,
+                                "http://localhost:8080"}]},
+                       {http_request,'POST',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                       <<"security=ECHO&scale=hour&day_begin=11&month_begin=4&year_begin=2012&hour_begin=0&minute_begin=0&second_begin=0&day_end=12&month_end=4&year_end=2012&hour_end=0&minute_end=0&second_end=0">>,
+                       "/data_collect_output.yaws",undefined,undefined,
+                       "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.885.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"year_begin","month_begin","day_begin","hour_begin",
+                    "minute_begin","second_begin"}}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m16,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 30-Oct-2011::16:34:51 ===
+stop_ready([], <0.830.0>)
+
+=ERROR REPORT==== 30-Oct-2011::16:42:03 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"
+=ERROR REPORT==== 30-Oct-2011::16:43:33 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2357>,
+                          {{127,0,0,1},33112},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_input.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"193",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"},
+                            {http_header,0,"Origin",undefined,
+                             "http://localhost:8080"}]},
+                          {http_request,'POST',
+                           {abs_path,"/data_process.yaws"},
+                           {1,1}},
+                          <<"security=ECHO&price=1.55&amount=3000&datetime_method=manual_datetime&transaction_day=10&transaction_month=7&transaction_year=2011&transaction_hour=07&transaction_minute=15&transaction_second=15">>,
+                          "/data_process.yaws",undefined,undefined,
+                          "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws",
+                          undefined,undefined,<0.62.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"transaction_year","transaction_month",
+                          "transaction_day","transaction_hour",
+                          "transaction_minute","transaction_second"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 30-Oct-2011::16:43:33 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws:7
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2357>,
+                       {{127,0,0,1},33112},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_input.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"193",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"},
+                            {http_header,0,"Origin",undefined,
+                                "http://localhost:8080"}]},
+                       {http_request,'POST',
+                           {abs_path,"/data_process.yaws"},
+                           {1,1}},
+                       <<"security=ECHO&price=1.55&amount=3000&datetime_method=manual_datetime&transaction_day=10&transaction_month=7&transaction_year=2011&transaction_hour=07&transaction_minute=15&transaction_second=15">>,
+                       "/data_process.yaws",undefined,undefined,
+                       "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_process.yaws",
+                       undefined,undefined,<0.62.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"transaction_year","transaction_month","transaction_day",
+                    "transaction_hour","transaction_minute",
+                    "transaction_second"}}}]}}
+Req: {http_request,'POST',{abs_path,"/data_process.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m17,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 30-Oct-2011::16:43:33 ===
+stop_ready([], <0.53.0>)
+
+=ERROR REPORT==== 30-Oct-2011::16:59:39 ===
+** Generic server query_process_server terminating 
+** Last message in was {datetime_extract,
+                        {{arg,#Port<0.2302>,
+                          {{127,0,0,1},33130},
+                          {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"184",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                             "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                             "gzip"},
+                            {http_header,0,"Origin",undefined,
+                             "http://localhost:8080"}]},
+                          {http_request,'POST',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                          <<"security=ECHO&scale=hour&day_begin=11&month_begin=4&year_begin=2012&hour_begin=0&minute_begin=0&second_begin=0&day_end=12&month_end=4&year_end=2012&hour_end=0&minute_end=0&second_end=0">>,
+                          "/data_collect_output.yaws",undefined,undefined,
+                          "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                          "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                          undefined,undefined,<0.50.0>,[],undefined,"/",
+                          undefined},
+                         post,
+                         {"year_begin","month_begin","day_begin","hour_begin",
+                          "minute_begin","second_begin"}}}
+** When Server state == {ehtml,{p,[],"Query process server ok."}}
+** Reason for termination == 
+** {{badmatch,undefined},
+    [{query_process_server,extract_data,2},
+     {query_process_server,handle_call,3},
+     {gen_server,handle_msg,5},
+     {proc_lib,init_p_do_apply,3}]}
+
+=ERROR REPORT==== 30-Oct-2011::16:59:39 ===
+
+
+ERROR erlang  code  crashed:
+ File: /home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws:7
+Reason: {{{badmatch,undefined},
+          [{query_process_server,extract_data,2},
+           {query_process_server,handle_call,3},
+           {gen_server,handle_msg,5},
+           {proc_lib,init_p_do_apply,3}]},
+         {gen_server,call,
+             [query_process_server,
+              {datetime_extract,
+                  {{arg,#Port<0.2302>,
+                       {{127,0,0,1},33130},
+                       {headers,undefined,
+                           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                           "localhost:8080",undefined,undefined,undefined,
+                           undefined,undefined,undefined,
+                           "http://localhost:8080/data_collect.yaws",
+                           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ Ubuntu/10.10 (2.30.6-1ubuntu5) Epiphany/2.30.6",
+                           undefined,[],undefined,undefined,"184",
+                           "application/x-www-form-urlencoded",undefined,
+                           undefined,undefined,undefined,
+                           [{http_header,11,'Accept-Language',undefined,
+                                "ru, en;q=0.90"},
+                            {http_header,10,'Accept-Encoding',undefined,
+                                "gzip"},
+                            {http_header,0,"Origin",undefined,
+                                "http://localhost:8080"}]},
+                       {http_request,'POST',
+                           {abs_path,"/data_collect_output.yaws"},
+                           {1,1}},
+                       <<"security=ECHO&scale=hour&day_begin=11&month_begin=4&year_begin=2012&hour_begin=0&minute_begin=0&second_begin=0&day_end=12&month_end=4&year_end=2012&hour_end=0&minute_end=0&second_end=0">>,
+                       "/data_collect_output.yaws",undefined,undefined,
+                       "/home/gas/Erlang/TestEcho/priv/docroot","/",
+                       "/home/gas/Erlang/TestEcho/priv/docroot/data_collect_output.yaws",
+                       undefined,undefined,<0.50.0>,[],undefined,"/",
+                       undefined},
+                   post,
+                   {"year_begin","month_begin","day_begin","hour_begin",
+                    "minute_begin","second_begin"}}}]}}
+Req: {http_request,'POST',{abs_path,"/data_collect_output.yaws"},{1,1}}
+Stack: [{gen_server,call,2},
+        {m13,out,1},
+        {yaws_server,deliver_dyn_part,8},
+        {yaws_server,aloop,3},
+        {yaws_server,acceptor0,2},
+        {proc_lib,init_p_do_apply,3}]
+
+=INFO REPORT==== 30-Oct-2011::16:59:39 ===
+stop_ready([], <0.103.0>)
+
+=ERROR REPORT==== 30-Oct-2011::17:04:35 ===
+ERROR: Can't parse post body for 'GET' requests: URL: "/home/gas/Erlang/TestEcho/priv/docroot/data_manipulate.yaws"

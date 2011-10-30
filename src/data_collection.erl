@@ -55,11 +55,17 @@ filter_data(DataDict, Filter) ->
 %% Scale = minute | hour | day | week | month | year
 %% ResultList = [{StartDateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}]
 %%--------------------------------------------------------------------
+collect(_, []) -> [];
 collect(Scale, List) ->
+	
 	SortF = fun({Date1, _A}, {Date2, _B}) -> Date1 < Date2 end,
+
 	[{Ctime, {_, Price, Amount}} | Rest] = lists:sort(SortF, List),
+
 	{StartDateTime, Diff} = date_manipulation:scale_date(Ctime, Scale),
+
 	CollectedData = collect_(Diff, {StartDateTime, Price, Price, Price, Price, Amount}, [], Rest),
+	
 	lists:reverse(CollectedData).
 
 %%--------------------------------------------------------------------

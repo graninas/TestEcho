@@ -3,10 +3,11 @@
 </erl>
 
 
-<h1>Very simple "Deals with security" test site</h1></div>
+<h1>Very simple "Deals with security" test site</h1>
 
 <p><a href="./data_input.yaws">Input data</a></p>
 <p><a href="./data_output.yaws">View data</a></p>
+<p><a href="./data_manipulate.yaws">Load test data and etc.</a></p>
 <p><a href="./data_collect.yaws">Filter and collect data</a></p>
 <p><a href="./data_test.yaws">Security server tests</a></p>
 <p><a href="./index.yaws">Home page</a></p>

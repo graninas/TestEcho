@@ -8,8 +8,8 @@
 -behaviour(application).
 -export([start/2, stop/1]).
 
-start(_Type, StartArgs) ->
-    {ok, _Pid} = test_echo_sup:start_link().
+start(_Type, _StartArgs) ->
+    {ok, _Pid} = test_echo_sup:start().
 
 stop(_State) ->
     ok.
