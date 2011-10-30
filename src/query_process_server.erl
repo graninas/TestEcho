@@ -23,9 +23,19 @@ start() ->
   gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
 %%====================================================================
-%% Server data manipulation API.
+%% Server post/get processing API.
 %%====================================================================
 
+%%--------------------------------------------------------------------
+%% Function: datetime_extract(Options) -> {DateTime, StringDateTime}
+%% Description: Extracts posted or geted date/time values stored in A-variable.
+%% Returns ordinary DateTime structure and structure with all date/time values as strings.
+%% DateTime = datetime()
+%% StringDateTime = {{StrYear, StrMonth, StrDay}, {StrHour, StrMinute, StrSecond}}
+%% Options = {A, QueryMethod, {YearVar, MonthVar, DayVar, HourVar, MinuteVar, SecondVar}}
+%% QueryMethod = post | 'get'
+%% Vars = string()
+%%--------------------------------------------------------------------
 datetime_extract(Options) ->
 	gen_server:call(?SERVER, {datetime_extract, Options}).
 
@@ -54,9 +64,11 @@ init(_Args) ->
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
 
+% Called for datetime extraction.
 handle_call({datetime_extract, Options}, _From, State) ->
 	{reply, extract_data(datetime, Options), State};
 
+% Called in undefined cases.
 handle_call(_Request, _From, State) ->
 	{reply, ok, State}.
 

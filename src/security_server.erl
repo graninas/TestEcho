@@ -34,7 +34,7 @@ start() ->
 %%====================================================================
 
 %%--------------------------------------------------------------------
-%% Function: add_transaction(Transaction) -> {noreply, State}
+%% Function: add_transaction(Transaction) -> NewDict
 %% Description: Adds new transaction into the data Dict.
 %%
 %% Transaction = {DateTime, {SecurityName, Price, Amount}}
@@ -43,8 +43,7 @@ add_transaction(Transaction) ->
 	gen_server:call(?SERVER, {add_transaction, Transaction}).
 
 %%--------------------------------------------------------------------
-%% Function: report(Filter) -> {reply, ResultList, State} |
-%%                             {reply, ok, State}
+%% Function: report(Filter) -> ResultList
 %% Description: Extracts data from data Dict according to Filter and report format.
 %%
 %% Filter = {SecurityName, {DateTimeBegin, DateTimeEnd}, Scale}
@@ -55,24 +54,46 @@ report(Filter) ->
 	gen_server:call(?SERVER, {report_data, Filter}).
 
 %%--------------------------------------------------------------------
-%% Function: data() -> {reply, ResultDict, State}
+%% Function: data() -> Dict
 %% Description: Returns data Dict.
 %%--------------------------------------------------------------------
 data() ->
 	gen_server:call(?SERVER, get_data).
 
+%%--------------------------------------------------------------------
+%% Function: load_test_data() -> ResultDict
+%% Description: Clears current data and loads hardcoded test data.
+%%--------------------------------------------------------------------
 load_test_data() ->
 	gen_server:call(?SERVER, load_test_data).
 
+%%--------------------------------------------------------------------
+%% Function: load_test_data() -> ResultDict
+%% Description: Merges hardcoded test data into current data.
+%% Test data has higher priority.
+%%--------------------------------------------------------------------
 merge_test_data() ->
 	gen_server:call(?SERVER, merge_test_data).
 
+%%--------------------------------------------------------------------
+%% Function: set_data(DataDict) -> ResultDict
+%% Description: Sets new DataDict.
+%%--------------------------------------------------------------------
 set_data(NewDict) ->
 	gen_server:cast(?SERVER, {set_data, NewDict}).
 
+%%--------------------------------------------------------------------
+%% Function: set_data(DataDict) -> ResultDict
+%% Description: Clears data.
+%%--------------------------------------------------------------------
 clear_data() ->
 	gen_server:cast(?SERVER, clear_data).
 
+%%--------------------------------------------------------------------
+%% Function: set_data(DataDict) -> ResultDict
+%% Description: Filters data by provided filter.
+%% Filter = {SecurityName, {DateBegin, DateEnd}, _}
+%%--------------------------------------------------------------------
 filter_data(Filter) ->
 	gen_server:call(?SERVER, {filter_data, Filter}).
 
@@ -115,16 +136,19 @@ handle_call({add_transaction, Transaction}, _, State) ->
 	NewState = dict:store(DateTime, SecData, State),
 	{reply, NewState, NewState};
 
+%% Called for loading test data.
 handle_call(load_test_data, _, OldDict) ->
 	TestDict = test_data:test_data_dict(),
 	{reply, {OldDict, TestDict}, TestDict};
 
+%% Called for merging test data.
 handle_call(merge_test_data, _, OldDict) ->
 	TestDict = test_data:test_data_dict(),
 	MergeF = fun(_, Val1, _) -> Val1 end,
 	NewDict = dict:merge(MergeF, TestDict, OldDict),
 	{reply, NewDict, NewDict};
 
+%% Called for filtering data.
 handle_call({filter_data, Filter}, _, Dict) ->
 	NewDict = data_collection:filter_data(Dict, Filter),
 	{reply, NewDict, Dict};
@@ -140,9 +164,11 @@ handle_call(_Request, _From, State) ->
 %% Description: Handling cast messages
 %%--------------------------------------------------------------------
 
+%% Casted for seting new data.
 handle_cast({set_data, NewDict}, _) ->
 	{noreply, NewDict};
 
+%% Casted for clearing data.
 handle_cast(clear_data, _) ->
 	{noreply, dict:new()};
 

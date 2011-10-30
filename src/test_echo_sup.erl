@@ -5,8 +5,10 @@
 
 -export([init/1]).
 
+% Starting supervisor.
 start() -> start_link().
 
+% Starting debugging (if needed).
 start_tracer() ->
 	dbg:tracer(),
 	dbg:p(all,c),
@@ -18,6 +20,8 @@ start_tracer() ->
 start_link() ->
     {ok, _PID} = supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
+
+% Starting servers, application.
 init([]) ->
     TestEcho = {test_echo, {test_echo, start, []}, permanent,2000,worker,[test_echo]},
 	SecurityServer = {security_server, {security_server, start, []}, permanent,2000,worker,[security_server]},

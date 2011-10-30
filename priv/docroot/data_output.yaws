@@ -15,10 +15,13 @@ out(A) ->
 			   {"--------------------------------------------", "---------------------------", "---------------------", "-----------------------"}],
 	Count = length(DataList),
 
+	SortF = fun({Date1, _A}, {Date2, _B}) -> Date1 < Date2 end,
+	SortedDataList = lists:sort(SortF, DataList),
+
 	{ehtml, {'div', [], [
 		{p, [], "Rows count: " ++ integer_to_list(Count)},
 		{p, [], "-------------------------------------------------------------------------------------------"},
-		{p, [], ehtml_server:list_to_table(Headers ++ DataList)}
+		{p, [], ehtml_server:list_to_table(Headers ++ SortedDataList)}
 	]}}.
 	
 </erl>

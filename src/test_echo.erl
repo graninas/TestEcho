@@ -1,9 +1,18 @@
+%%%-------------------------------------------------------------------
+%%% File    : test_echo.erl
+%%% Author  : Granin Alexandr <graninas@gmail.com>
+%%% Description : Application file
+%%%-------------------------------------------------------------------
+
 -module(test_echo).
 -compile(export_all).
 
+%% Starting application.
 start() ->
     {ok, spawn(?MODULE, run, [])}.
 
+
+%% Starting YAWS embedded.
 run() ->
     Id = "embedded",
     GconfList = [{id, Id}],

@@ -23,6 +23,13 @@ out(A) ->
     SortedFilteredDataList = lists:sort(SortF, FilteredDataList),
 	CollectedDataList = security_server:report(Filter),
 
+	DataListHeaders = [{"Datetime", "SecurityName", "Price", "Amount"},
+			  		   {"-----------------------------------------",
+						"---------------------------", "---------------------", "-----------------------"}],
+	ResultDataListHeaders = [{"DateTime", "Open Price", "ClosePrice", "MinPrice", "MaxPrice", "TotalAmount"},
+							 {"-----------------------------------------", "-----------------", 
+							  "-----------------", "------------------", "-----------------", "-----------------"}],
+
 	{{YearB, MonthB, DayB}, {HourB, MinuteB, SecondB}} = DateTimeBegin,
 	{{YearE, MonthE, DayE}, {HourE, MinuteE, SecondE}} = DateTimeEnd,
 
@@ -39,10 +46,10 @@ out(A) ->
 		{p, [], "Sorted:" ++ integer_to_list(erlang:length(SortedFilteredDataList))},
 		{p, [], "Collected: " ++ integer_to_list(erlang:length(CollectedDataList))},
 		{p, [], "Result - collected data:"},
-		ehtml_server:list_to_table(CollectedDataList),
-		{p, [], "=========================================================================================="},
+		ehtml_server:list_to_table(ResultDataListHeaders ++ CollectedDataList),
+		{p, [], "==========================================================="},
 		{p, [], "Debug output: intermediate filtered and sorted data:"},
-		ehtml_server:list_to_table(SortedFilteredDataList)
+		ehtml_server:list_to_table(DataListHeaders ++ SortedFilteredDataList)
 	]}}.
 
 i(Num) -> integer_to_list(Num).

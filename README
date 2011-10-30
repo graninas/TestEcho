@@ -1,11 +1,19 @@
+=============================================
 TestEcho - Erlang test problem for Echo.
 Author: Alexandr Granin
 graninas@gmail.com
 License: GPL
------------------------------------------
 
+3rd party modules:
+- mochnum.erl
+Author: Bob Ippolito <bob@mochimedia.com>
+copyright 2007 Mochi Media, Inc.
+=============================================
+
+-----------------------------------
 Installation and Running (on Linux)
-1. Edit ./src/test_echo.app.src, set theese env variables:
+-----------------------------------
+1. Edit ./src/test_echo.app.src, set these env variables:
  - docroot - where test_echo .yaws files can be found (default - "../priv/docroot", i.e. TestEcho/priv/docroot seen from TestEcho/ebin);
  - host - web-server IP (default - {0,0,0,0}, i.e. localhost);
  - port - free port for web server (default 8081);
@@ -16,7 +24,7 @@ Installation and Running (on Linux)
 application:start(test_echo).
 5. If all {ok}, the site will be available at host:port page.
 
-By default, ./run script searches the YAWS beams in /usr/local/lib/yaws and /usr/lib/yaws. If you have different YAWS settings, edit paths in file ./ebin/st.
+By default, ./run script searches the YAWS beams in /usr/local/lib/yaws and /usr/lib/yaws. If you have different YAWS settings, edit paths in file ./ebin/st. Yaws started in embedded mode.
 
 Alternatively, test_echo application can be started from ./ebin directory:
 
@@ -24,9 +32,36 @@ cd ./ebin
 erl -pa <path/to/yaws/beams>
 erl> test_echo_sup:start().  % more correct: application:start(test_echo).
 
-Yaws started in embedded mode.
+-----------------
+Program structure
+-----------------
 
-3rd party modules:
-- mochnum.erl
-Author: Bob Ippolito <bob@mochimedia.com>
-copyright 2007 Mochi Media, Inc.
+Program has 3 parts: site files, servers' code and modules' code. Dependence:
+Site -> (Supervised Servers) -> Modules
+
+Servers:
+- ehtml_server - produces ehtml-tuples (tables for datalists, datetime inputs etc.). To add new datalist format, write appropriate ehtml_server:make_table_row() function. (It could be improved by using hi-order functions actually).
+- security_server - stores and processes data.
+- query_process_server - processes YAWS GET and POST queries in complex cases (datetime extracting).
+
+Modules:
+- mochinum - only for float-value formatting.
+- test_data - test functions and hardcoded test data, including test_echo.pdf tables (supplemented by my data for testing convenience).
+- data_collection - functions to process data, including test_echo.pdf scale-depended collecting. (It was prototyped in Haskell, see .prototypes folder.)
+- date_manipulation - functions to support data_collection module. (It  prototyped too.)
+- test_echo, test_echo_app, test_echo_sup - application files.
+
+Site:
+- index.yaws - Index page
+- data_collect.yaws - Filter and Scale input form for collecting data.
+- data_collect_output.yaws - Results of collecting data.
+- data_input.yaws - Security transactions input form.
+- data_process.yaws - Security transactions process after data_input.yaws.
+- data_manipulate.yaws - Clearing data; loading hardcoded test data only or merging the one.
+- data_output.yaws - Showing data.
+- data_test.yaws - Some testing procedures for security_server and modules.
+
+-------
+WARNING
+-------
+There are some strange behaviour with browser cache. Sometimes it crashes inputed data or provides invalid data to servers. Probably, it could be removed by carefully writed site, some yaws/browser settings or more safe module functions, but this is another problem, not for now.

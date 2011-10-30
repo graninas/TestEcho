@@ -1,7 +1,7 @@
 %%%-------------------------------------------------------------------
 %%% File    : test_data.erl
 %%% Author  : Granin Alexandr <graninas@gmail.com>
-%%% Description : Functions with test data.
+%%% Description : Test data and test structures.
 %%%-------------------------------------------------------------------
 
 -module(test_data).

@@ -25,15 +25,40 @@ start() ->
   gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
 %%====================================================================
-%% Server data manipulation API.
+%% Server ehtml formating API.
 %%====================================================================
 
+%%--------------------------------------------------------------------
+%% Function: list_to_table(DataList) -> ehtml table structure
+%% Description: Formats supported data lists into ehtml table structure.
+%% Provide new versions of make_table_row() function to support new
+%% datalist formats.
+%% Currently supported data lists:
+%% [{DateTime, {SecurityName, Price, Amount}}]
+%% [{StartDateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}]
+%% [{string(), string(), string(), string(), string(), string()}]  (any string data)
+%% [{string(), string(), string(), string()}] (any string data)
+%%--------------------------------------------------------------------
 list_to_table(DataList) ->
 	gen_server:call(?SERVER, {list_to_table, DataList}).
 
+%%--------------------------------------------------------------------
+%% Function: date_input_template(PredefVals) -> ehtml date input item list
+%% Description: Returns list of ehtml date input items.
+%% PredefVals = {{YearInputName, YearDefVal, IsYRequired},
+%%			 	 {MonthInputName, _MonthDefVal, IsMRequired},
+%%				 {DayInputName, DayDefVal, IsDRequired}}
+%%--------------------------------------------------------------------
 date_input_template(PredefVals) ->
 	gen_server:call(?SERVER, {date_input_template, PredefVals}).
 
+%%--------------------------------------------------------------------
+%% Function: time_input_template(PredefVals) -> ehtml time input item list
+%% Description: Returns list of ehtml time input items.
+%% PredefVals = {{HourInputName, HourDefVal, IsHRequired},
+%%               {MinuteInputName, MinuteDefVal, IsMRequired},
+%%               {SecondInputName, SecondDefVal, IsSRequired}}
+%%--------------------------------------------------------------------
 time_input_template(PredefVals) ->
 	gen_server:call(?SERVER, {time_input_template, PredefVals}).
 
@@ -61,18 +86,22 @@ init(_Args) ->
 %%                                      {stop, Reason, State}
 %% Description: Handling call messages
 %%--------------------------------------------------------------------
+%% Called for empty datalist case. Just returns "No data" in paragraph.
 handle_call({_, []}, _From, State) ->
 	Res = {p, [], "No data."},
 	{reply, Res, State};
 
+%% Called to make table from datalist.
 handle_call({list_to_table, DataList}, _From, State) ->
 	Res = {table, [], make_table_rows(DataList)},
 	{reply, Res, State};
 
+%% Calles to make ehtml date input fields.
 handle_call({date_input_template, PredefVals}, _From, State) ->
 	Res = make_date_input_template(PredefVals),
 	{reply, Res, State};
 
+%% Called to make ehtml time input fields.
 handle_call({time_input_template, PredefVals}, _From, State) ->
 	Res = make_time_input_template(PredefVals),
 	{reply, Res, State};
@@ -121,7 +150,7 @@ code_change(_OldVsn, State, _Extra) ->
 %%====================================================================
 %% Internal functions.
 %%====================================================================
-
+%% Makes date input template.
 make_date_input_template({
 						  {YearInputName, YearDefVal, IsYRequired},
 						  {MonthInputName, _MonthDefVal, IsMRequired},
@@ -144,6 +173,7 @@ make_date_input_template({
 		]},
 	 {input,  req(IsYRequired) ++ [{name, YearInputName}, {type, text}, {placeholder, YearDefVal}, {max, "2100"}, {min, "1800"}, {maxlength, "4"}, {size, "4"}]}].
 
+%% Makes time input template.
 make_time_input_template({{HourInputName, HourDefVal, IsHRequired},
                           {MinuteInputName, MinuteDefVal, IsMRequired},
                           {SecondInputName, SecondDefVal, IsSRequired}}) ->
@@ -151,13 +181,18 @@ make_time_input_template({{HourInputName, HourDefVal, IsHRequired},
 	 {input,  req(IsMRequired) ++ [{name, MinuteInputName}, {type, text}, {maxlength, "2"}, {size, "2"}, {max, 59}, {min, "0"}, {placeholder, MinuteDefVal }]},
 	 {input,  req(IsSRequired) ++ [{name, SecondInputName}, {type, text}, {maxlength, "2"}, {size, "2"}, {max, 59}, {min, "0"}, {placeholder, SecondDefVal }]}].
 
+%% Makes abstract table row.
 make_table_rows([DataItem | []]) ->
 	[make_table_row(DataItem)];
 
+%% Makes abstract table rows.
 make_table_rows([DataItem | RestList]) ->
 	[make_table_row(DataItem)] ++ make_table_rows(RestList).
 
-%% For SecurityTransaction format
+%%%% Makes specified table row.
+%%%% Provide new function versions to support another datalist formats.
+% For Security Transaction format
+% DataItem = {DateTime, {SecurityName, Price, Amount}}
 make_table_row({DateTime, SecData}) ->
 	{SecurityName, Price, Amount} = SecData,
 
@@ -168,7 +203,8 @@ make_table_row({DateTime, SecData}) ->
 		{td, [], md(Amount)}
 	]};
 
-% ResultList = [{StartDateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}]
+% For string headers of table for Collected Data format
+% DataItem = {StartDateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}
 make_table_row({DateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount})
 	when erlang:is_list(DateTime) ->
 		{tr, [], [
@@ -179,7 +215,8 @@ make_table_row({DateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount
 			{td, [], MaxPrice},
 			{td, [], TotalAmount}
 		]};
-
+% For Collected Data format
+% DataItem = {StartDateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}
 make_table_row({DateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount}) -> 
 	{tr, [], [
 		{td, [], datetime_to_string(DateTime)},
@@ -191,6 +228,7 @@ make_table_row({DateTime, OpenPrice, ClosePrice, MinPrice, MaxPrice, TotalAmount
 	]};
 	
 %% For test cases format
+%% DataItem = {A, B, C, D}
 make_table_row({A, B, C, D}) ->
 	{tr, [], [
 		{td, [], A},
@@ -199,7 +237,7 @@ make_table_row({A, B, C, D}) ->
 		{td, [], D}
 	]}.
 
-
+%% Helpers
 md(Num) -> mochinum:digits(Num).
 
 datetime_to_string({{Year, Month, Day},{Hour, Minute, Second}}) ->
