@@ -1,1 +1,1 @@
-erl -pa /usr/local/lib/yaws/ebin/
+erl -pa /usr/lib/yaws/bin /usr/local/lib/yaws/ebin/

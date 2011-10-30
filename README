@@ -1,1 +1,22 @@
 TestEcho - Erlang test problem for Echo.
+Author: Alexandr Granin
+graninas@gmail.com
+License: GPL
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+3rd party modules:
+- mochnum.erl
+Author: Bob Ippolito <bob@mochimedia.com>
+copyright 2007 Mochi Media, Inc.

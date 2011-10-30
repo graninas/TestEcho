@@ -16,8 +16,7 @@ start_tracer() ->
 	dbg:p(new,p).
 
 start_link() ->
-    {ok, PID} = supervisor:start_link({local, ?MODULE}, ?MODULE, []),
-	unlink(PID). %PID = console pid(). Unlinked for console-crash independing.
+    {ok, _PID} = supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 init([]) ->
     TestEcho = {test_echo, {test_echo, start, []}, permanent,2000,worker,[test_echo]},
